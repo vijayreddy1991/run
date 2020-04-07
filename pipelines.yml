@@ -37,9 +37,6 @@ pipelines:
           onExecute:
             - printenv
 
-            
-  - name: vijay_pipeline_bash
-  
       - name: functions
         type: Bash
         configuration:     
