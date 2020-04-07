@@ -20,7 +20,7 @@ pipelines:
 
         execution:
           onExecute:
-            - add_run_variables `testvariable="asdffdjksfjk.    1"`
+            - add_run_variables testvariable="asdffdjksfjk455457457"
             - add_pipeline_variables vijay="kumar.      1"    
             - export_pipeline_variables jfrog="pipe  "
             - export_run_variables jfrog1="pip   "             
