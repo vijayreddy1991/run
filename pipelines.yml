@@ -4,7 +4,7 @@ resources:
     type: GitRepo
     configuration:
       gitProvider: vijay_git
-      path: vijayreddy1991/powershell
+      path: vijayreddy1991/run
 
 pipelines:
 
@@ -17,9 +17,7 @@ pipelines:
           nodePool: win_2019         
           inputResources:
             - name: myRepo
-              trigger: false
-          inputSteps:
-            - name: add_files
+
         execution:
           onExecute:
             - add_run_variables testvariable="asdffdjksfjk.    1"
@@ -63,7 +61,7 @@ pipelines:
           inputResources:
             - name: myRepo
           inputSteps:
-            - name: add_files
+            - name: functions
         execution:
           onExecute:
             - 
