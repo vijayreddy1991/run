@@ -61,7 +61,6 @@ pipelines:
             - name: functions
         execution:
           onExecute:
-            - 
             - if($res_myRepo_jfrog1 -eq $null){ Write-Error "Stop" -ErrorAction Stop} 
             - if($res_myRepo_jfrog -eq $null){ Write-Error "Stop" -ErrorAction Stop}            
             
