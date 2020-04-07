@@ -46,7 +46,7 @@ pipelines:
 #             - name: restore_pipelines
         execution:
           onExecute:
-            - add_run_variables testvariable="asdffdjksfjk.   1"
+            - add_run_variables testvariable="asdffdjksfjk566851"
             - add_pipeline_variables vijay="kumar.      1"     
             - export_pipeline_variables jfrog="pipelines.  "
             - export_run_variables jfrog1="pipelines1.   "   
