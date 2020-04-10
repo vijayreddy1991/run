@@ -26,8 +26,7 @@ pipelines:
             - get-childitem $run_dir\workspace
             - add_cache_files -sources "$res_repo_pipe_resourcePath\test.txt" -name newFile
             - restore_cache_files newFile test.txt
-            - ls
-            - echo test.txt      
+            - Get-Content test.txt      
 
       - name: S_PS_UTIL_0063_2
         type: Bash
