@@ -1,0 +1,37 @@
+resources:
+  - name: repo_pipe
+    type: GitRepo
+    configuration:
+      gitProvider: vijay_gitHub
+      path: vijayreddy1991/run
+
+pipelines:
+  - name: pipeline_S_PS_UTIL_0063
+    steps:
+      - name: S_PS_UTIL_0063
+        type: PowerShell
+        configuration:
+          nodePool: win_2019
+          inputResources:
+            - name: repo_pipe
+
+        execution:
+          onExecute:
+            - get-childitem $run_dir\workspace
+            - get-childitem $res_repo_pipe_resourcePath
+            - add_run_variables runVariable="asdffdjksfj.       k455457457"
+            - export_run_variables
+
+
+      - name: S_PS_UTIL_0063_2
+        type: Bash
+        configuration:
+          nodePool: win_2019
+          inputResources:
+            - name: repo_pipe
+          inputSteps:
+            - name:  S_PS_UTIL_0063
+
+        execution:
+          onExecute:
+            - ech $runVariable
