@@ -26,7 +26,7 @@ pipelines:
             - Set-Content -Path "test.txt" -Value "testing"
             - get-childitem $run_dir\workspace
             - add_pipeline_files -sources "$res_repo_pipe_resourcePath\test.txt" -name newFile
-            - export_pipeline_files
+#             - export_pipeline_files
 
       - name: S_PS_UTIL_0063_2
         type: Bash
