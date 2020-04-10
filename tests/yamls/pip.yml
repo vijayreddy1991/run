@@ -24,7 +24,7 @@ pipelines:
             - export_run_variables
             - export_pipeline_variables      
             - get-childitem $run_dir\workspace
-            - add_run_files -sources "$res_repo_resourcePath\test.txt" -name newFile    
+            - add_run_files -sources "$res_repo_resourcePath\tests\yamls\test.txt" -name newFile    
 
       - name: S_PS_vijay_2
         type: Bash
