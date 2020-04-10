@@ -27,9 +27,9 @@ pipelines:
             - add_run_files -sources "$res_repo_resourcePath\tests\yamls\test.txt" -name newFile    
 
       - name: S_PS_vijay_2
-        type: Bash
+        type: PowerShell
         configuration:
-#           nodePool: win_2019
+          nodePool: win_2019
           inputResources:
             - name: repo
           inputSteps:
@@ -37,8 +37,5 @@ pipelines:
 
         execution:
           onExecute:
-            - echo $runVariable
-            - echo $pipelineVariable
             - restore_run_files newFile test.txt
-            - ls
-            - cat test.txt
+
