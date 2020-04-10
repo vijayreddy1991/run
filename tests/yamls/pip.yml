@@ -38,4 +38,5 @@ pipelines:
         execution:
           onExecute:
             - restore_run_files -name newFile -path "$res_repo_resourcePath\tests\yamls\test.txt"
+            - cat test.txt
 
