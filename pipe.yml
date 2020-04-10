@@ -126,7 +126,5 @@ pipelines:
         execution:
           onExecute:
             - $imageTag
-            - $scm          
-            - if($res_repo_pipe_imageTag -eq $null){ Write-Error "Stop" -ErrorAction Stop} 
-            - if($res_repo_pipe_scm -eq $null){ Write-Error "Stop" -ErrorAction Stop} 
+            - $scm           
 
