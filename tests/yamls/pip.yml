@@ -6,9 +6,9 @@ resources:
       path: vijayreddy1991/run
 
 pipelines:
-  - name: pipeline_S_PS_UTIL_0063
+  - name: pipeline_vijay
     steps:
-      - name: S_PS_UTIL_0063
+      - name: S_PS_vijay
         type: PowerShell
         configuration:
           nodePool: win_2019
@@ -26,14 +26,14 @@ pipelines:
             - get-childitem $run_dir\workspace
             - add_run_files -sources "$res_repo_resourcePath\test.txt" -name newFile    
 
-      - name: S_PS_UTIL_0063_2
+      - name: S_PS_vijay_2
         type: Bash
         configuration:
 #           nodePool: win_2019
           inputResources:
             - name: repo
           inputSteps:
-            - name:  S_PS_UTIL_0063
+            - name:  S_PS_vijay
 
         execution:
           onExecute:
