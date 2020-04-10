@@ -39,6 +39,6 @@ pipelines:
           onExecute:
             - echo $runVariable
             - echo $pipelineVariable
-            - restore_cache_files newFile test.txt
+            - restore_run_files newFile test.txt
             - ls
             - cat test.txt
