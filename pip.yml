@@ -24,7 +24,8 @@ pipelines:
             - export_run_variables
             - export_pipeline_variables
             - Set-Content -Path "test.txt" -Value "testing"
-            - add_pipeline_files -sources "text.txt" -name newFile
+            - get-childitem $run_dir\workspace
+            - add_pipeline_files -sources "$res_repo_pipe_resourcePath\text.txt" -name newFile
             - export_pipeline_files
 
       - name: S_PS_UTIL_0063_2
@@ -41,3 +42,5 @@ pipelines:
             - echo $runVariable
             - echo $pipelineVariable
             - restore_pipeline_files newFile text.txt
+            - ls
+            - cat test.txt
