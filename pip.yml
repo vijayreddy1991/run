@@ -20,8 +20,9 @@ pipelines:
             - get-childitem $run_dir\workspace
             - get-childitem $res_repo_pipe_resourcePath
             - add_run_variables runVariable="asdffdjksfj.       k455457457"
+            - add_pipeline_variables pipelineVariable="abcd1234.        xzyz"
             - export_run_variables
-
+            - export_pipeline_variables
 
       - name: S_PS_UTIL_0063_2
         type: Bash
@@ -35,3 +36,4 @@ pipelines:
         execution:
           onExecute:
             - echo $runVariable
+            - echo $pipelineVariable
