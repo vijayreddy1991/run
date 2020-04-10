@@ -123,5 +123,7 @@ pipelines:
 
         execution:
           onExecute:
-            - if($res_repo_pipe_jfrog1 -eq $null){ Write-Error "Stop" -ErrorAction Stop} 
-            - if($res_repo_pipe_jfrog -eq $null){ Write-Error "Stop" -ErrorAction Stop} 
+#             - if($res_repo_pipe_jfrog1 -eq $null){ Write-Error "Stop" -ErrorAction Stop} 
+#             - if($res_repo_pipe_jfrog -eq $null){ Write-Error "Stop" -ErrorAction Stop} 
+            - $jfrog1
+            - $jfrog
