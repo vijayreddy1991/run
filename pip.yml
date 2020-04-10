@@ -23,6 +23,9 @@ pipelines:
             - add_pipeline_variables pipelineVariable="abcd1234.        xzyz"
             - export_run_variables
             - export_pipeline_variables
+            - Set-Content -Path "test.txt" -Value "testing"
+            - add_pipeline_files -sources "text.txt" -name newFile
+            - export_pipeline_files
 
       - name: S_PS_UTIL_0063_2
         type: Bash
@@ -37,3 +40,4 @@ pipelines:
           onExecute:
             - echo $runVariable
             - echo $pipelineVariable
+            - restore_pipeline_files newFile text.txt
