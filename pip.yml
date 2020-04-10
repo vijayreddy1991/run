@@ -26,7 +26,6 @@ pipelines:
             - restore_cache_files newFile test.txt
             - ls
             - echo test.txt            
-            - Set-Content -Path "test.txt" -Value "testing"
             - get-childitem $run_dir\workspace
             - add_cache_files -sources "$res_repo_pipe_resourcePath\test.txt" -name newFile
 #             - export_pipeline_files
