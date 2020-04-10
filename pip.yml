@@ -26,7 +26,7 @@ pipelines:
       - name: S_PS_UTIL_0063_2
         type: Bash
         configuration:
-          nodePool: win_2019
+#           nodePool: win_2019
           inputResources:
             - name: repo_pipe
           inputSteps:
@@ -34,4 +34,4 @@ pipelines:
 
         execution:
           onExecute:
-            - ech $runVariable
+            - echo $runVariable
