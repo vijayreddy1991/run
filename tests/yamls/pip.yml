@@ -24,10 +24,7 @@ pipelines:
             - export_run_variables
             - export_pipeline_variables      
             - get-childitem $run_dir\workspace
-            - add_cache_files -sources "$res_repo_pipe_resourcePath\test.txt" -name newFile
-            - restore_cache_files newFile test.txt
-            - get-childitem $step_tmp_dir
-            - Get-Content $step_tmp_dir\test.txt      
+            - add_run_files -sources "$res_repo_pipe_resourcePath\test.txt" -name newFile    
 
       - name: S_PS_UTIL_0063_2
         type: Bash
