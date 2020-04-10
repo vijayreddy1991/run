@@ -22,13 +22,12 @@ pipelines:
             - add_run_variables runVariable="asdffdjksfj.       k455457457"
             - add_pipeline_variables pipelineVariable="abcd1234.        xzyz"
             - export_run_variables
-            - export_pipeline_variables
-#             - restore_cache_files newFile test.txt
-#             - ls
-#             - echo test.txt            
+            - export_pipeline_variables      
             - get-childitem $run_dir\workspace
             - add_cache_files -sources "$res_repo_pipe_resourcePath\test.txt" -name newFile
-#             - export_pipeline_files
+            - restore_cache_files newFile test.txt
+            - ls
+            - echo test.txt      
 
       - name: S_PS_UTIL_0063_2
         type: Bash
