@@ -37,5 +37,5 @@ pipelines:
 
         execution:
           onExecute:
-            - restore_run_files newFile test.txt
+            - restore_run_files -name newFile -source "$res_repo_resourcePath\tests\yamls\test.txt"
 
