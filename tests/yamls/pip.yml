@@ -1,5 +1,5 @@
 resources:
-  - name: repo_pipe
+  - name: repo
     type: GitRepo
     configuration:
       gitProvider: vijay_gitHub
@@ -13,25 +13,25 @@ pipelines:
         configuration:
           nodePool: win_2019
           inputResources:
-            - name: repo_pipe
+            - name: repo
 
         execution:
           onExecute:
             - get-childitem $run_dir\workspace
-            - get-childitem $res_repo_pipe_resourcePath
+            - get-childitem $res_repo_resourcePath
             - add_run_variables runVariable="asdffdjksfj.       k455457457"
             - add_pipeline_variables pipelineVariable="abcd1234.        xzyz"
             - export_run_variables
             - export_pipeline_variables      
             - get-childitem $run_dir\workspace
-            - add_run_files -sources "$res_repo_pipe_resourcePath\test.txt" -name newFile    
+            - add_run_files -sources "$res_repo_resourcePath\test.txt" -name newFile    
 
       - name: S_PS_UTIL_0063_2
         type: Bash
         configuration:
 #           nodePool: win_2019
           inputResources:
-            - name: repo_pipe
+            - name: repo
           inputSteps:
             - name:  S_PS_UTIL_0063
 
