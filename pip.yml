@@ -25,7 +25,7 @@ pipelines:
             - export_pipeline_variables
             - Set-Content -Path "test.txt" -Value "testing"
             - get-childitem $run_dir\workspace
-            - add_pipeline_files -sources "$res_repo_pipe_resourcePath\test.txt" -name newFile
+            - add_cache_files -sources "$res_repo_pipe_resourcePath\test.txt" -name newFile
 #             - export_pipeline_files
 
       - name: S_PS_UTIL_0063_2
@@ -41,6 +41,6 @@ pipelines:
           onExecute:
             - echo $runVariable
             - echo $pipelineVariable
-            - restore_pipeline_files newFile test.txt
+            - restore_cache_files newFile test.txt
             - ls
             - cat test.txt
