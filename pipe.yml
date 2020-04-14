@@ -8,7 +8,7 @@ resources:
 pipelines:
   - name: test1
     steps:
-      - name: utilityFunction
+      - name: test
         type: Bash
         configuration:
           integrations:
