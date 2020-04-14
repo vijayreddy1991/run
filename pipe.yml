@@ -109,7 +109,7 @@ pipelines:
             - hash -d pip
             - pip install pytest           
             - py.test --verbose --junit-xml test-reports/results.xml test_calc.py
-            - save_tests $res_repo_pipe_resourcePath/test-reports/result  
+            - save_tests $res_repo_pipe_resourcePath/test-reports/res.xml  
             - popd
             
 #       - name: utilityFunction4
