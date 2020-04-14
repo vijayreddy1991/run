@@ -91,38 +91,38 @@ pipelines:
             - save_tests $res_repo_pipe_resourcePath/test-reports/results.xml             
             - popd
 
-      - name: utilityFunction3
-        type: Bash
-        configuration:
-          integrations:
-            - name: vijay_gitHub
-          inputResources:
-            - name: repo_pipe
-          inputSteps:
-            - name: utilityFunction2          
+#       - name: utilityFunction3
+#         type: Bash
+#         configuration:
+#           integrations:
+#             - name: vijay_gitHub
+#           inputResources:
+#             - name: repo_pipe
+#           inputSteps:
+#             - name: utilityFunction2          
 
-        execution:
-          onExecute:
-            - pushd $res_repo_pipe_resourcePath
-            - restore_pipeline_files jfrog_pipeline $PWD/file.txt
-            - cat file.txt
-#             - execute_command [--retry] printen
-#             - retry_command printen
-            - popd
+#         execution:
+#           onExecute:
+#             - pushd $res_repo_pipe_resourcePath
+#             - restore_pipeline_files jfrog_pipeline $PWD/file.txt
+#             - cat file.txt
+# #             - execute_command [--retry] printen
+# #             - retry_command printen
+#             - popd
             
-      - name: utilityFunction4
-        type: PowerShell
-        configuration:
-          nodePool: win_2019        
-          integrations:
-            - name: vijay_gitHub
-          inputResources:
-            - name: repo_pipe
-          inputSteps:
-            - name: utilityFunction3         
+#       - name: utilityFunction4
+#         type: PowerShell
+#         configuration:
+#           nodePool: win_2019        
+#           integrations:
+#             - name: vijay_gitHub
+#           inputResources:
+#             - name: repo_pipe
+#           inputSteps:
+#             - name: utilityFunction3         
 
-        execution:
-          onExecute:
-            - $imageTag
-            - $scm           
+#         execution:
+#           onExecute:
+#             - $imageTag
+#             - $scm           
 
