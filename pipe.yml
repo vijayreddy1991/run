@@ -62,12 +62,12 @@ pipelines:
 #             - cat encrypted.txt
 #             - decrypt_file encrypted.txt --output decrypted.txt --key key.pem
 #             - cat decrypted.txt 
-#             - python -m py_compile tests/core/sampleExecutionFile/calc.py
-#             - pip install --upgrade pip
-#             - hash -d pip
-#             - pip install pytest           
-#             - py.test --verbose --junit-xml test-reports/results.xml tests/core/sampleExecutionFile/test_calc.py
-#             - save_tests $res_repo_pipe_resourcePath/test-reports/results.xml             
+            - python -m py_compile calc.py
+            - pip install --upgrade pip
+            - hash -d pip
+            - pip install pytest           
+            - py.test --verbose --junit-xml test-reports/results.xml test_calc.py
+            - save_tests $res_repo_pipe_resourcePath/test-reports/results.xml             
             - popd
 
       - name: utilityFunction2
@@ -83,14 +83,12 @@ pipelines:
           onExecute:
             - printenv
             - pushd $res_repo_pipe_resourcePath
-            - restore_run_files jfrog $PWD/test.txt
-            - cat $PWD/test.txt
-            - restore_cache_files jfrog_pipe $PWD/file.txt
-            - echo "$imageTag"
-            - echo $runVariable
-            - echo $pipelineVariable
-            - echo $scm
-            - echo $imageTag
+            - python -m py_compile calc.py
+            - pip install --upgrade pip
+            - hash -d pip
+            - pip install pytest           
+            - py.test --verbose --junit-xml test-reports/results.xml test_calc.py
+            - save_tests $res_repo_pipe_resourcePath/test-reports/results.xml             
             - popd
 
       - name: utilityFunction3
