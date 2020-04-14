@@ -6,7 +6,7 @@ resources:
       path: vijayreddy1991/run           
       
 pipelines:
-  - name: utilityfuctiontest1
+  - name: test1
     steps:
       - name: utilityFunction
         type: Bash
@@ -70,13 +70,13 @@ pipelines:
             - save_tests $res_repo_pipe_resourcePath/test-reports/results.xml             
             - popd
 
-      - name: utilityFunction2
+      - name: test2
         type: Bash
         configuration:
           integrations:
             - name: vijay_gitHub
           inputSteps:
-            - name: utilityFunction
+            - name: test
           inputResources:
             - name: repo_pipe                
         execution:
@@ -91,7 +91,7 @@ pipelines:
             - save_tests $res_repo_pipe_resourcePath/test-reports           
             - popd
 
-      - name: utilityFunction3
+      - name: test3
         type: Bash
         configuration:
           integrations:
@@ -99,7 +99,7 @@ pipelines:
           inputResources:
             - name: repo_pipe
           inputSteps:
-            - name: utilityFunction2          
+            - name: test2          
 
         execution:
           onExecute:
@@ -109,7 +109,7 @@ pipelines:
             - hash -d pip
             - pip install pytest           
             - py.test --verbose --junit-xml test-reports/results.xml test_calc.py
-            - save_tests $res_repo_pipe_resourcePath/test-reports/res.xml  
+            - save_tests $res_repo_pipe_resourcePath/test-reports/  
             - popd
             
 #       - name: utilityFunction4
