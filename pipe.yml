@@ -88,27 +88,29 @@ pipelines:
             - hash -d pip
             - pip install pytest           
             - py.test --verbose --junit-xml test-reports/results.xml test_calc.py
-            - save_tests $res_repo_pipe_resourcePath/test-reports/tyt.xml             
+            - save_tests $res_repo_pipe_resourcePath/test-reports           
             - popd
 
-#       - name: utilityFunction3
-#         type: Bash
-#         configuration:
-#           integrations:
-#             - name: vijay_gitHub
-#           inputResources:
-#             - name: repo_pipe
-#           inputSteps:
-#             - name: utilityFunction2          
+      - name: utilityFunction3
+        type: Bash
+        configuration:
+          integrations:
+            - name: vijay_gitHub
+          inputResources:
+            - name: repo_pipe
+          inputSteps:
+            - name: utilityFunction2          
 
-#         execution:
-#           onExecute:
-#             - pushd $res_repo_pipe_resourcePath
-#             - restore_pipeline_files jfrog_pipeline $PWD/file.txt
-#             - cat file.txt
-# #             - execute_command [--retry] printen
-# #             - retry_command printen
-#             - popd
+        execution:
+          onExecute:
+            - pushd $res_repo_pipe_resourcePath
+            - python -m py_compile calc.py
+            - pip install --upgrade pip
+            - hash -d pip
+            - pip install pytest           
+            - py.test --verbose --junit-xml test-reports/results.xml test_calc.py
+            - save_tests $res_repo_pipe_resourcePath/test-reports/result  
+            - popd
             
 #       - name: utilityFunction4
 #         type: PowerShell
