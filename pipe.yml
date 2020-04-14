@@ -87,7 +87,7 @@ pipelines:
             - pip install --upgrade pip
             - hash -d pip
             - pip install pytest           
-            - py.test --verbose --junit-xml test-reports
+            - py.test --verbose --junit-xml test-reports test_calc.py
             - save_tests $res_vijay_resourcePath/test-reports           
             - popd
 
