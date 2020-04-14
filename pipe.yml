@@ -82,7 +82,7 @@ pipelines:
         execution:
           onExecute:
             - printenv
-            - pushd $res_repo_pipe_resourcePath
+            - pushd $res_vijay_resourcePath
             - python -m py_compile calc.py
             - pip install --upgrade pip
             - hash -d pip
