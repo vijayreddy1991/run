@@ -18,11 +18,11 @@ pipelines:
             
         execution:
           onExecute: 
-            - printenv
-            - bump_semver v3.0.0 major
-            - bump_semver v3.0.0 minor
-            - bump_semver v3.0.0 patch
-            - bump_semver v3.0.0 beta
+#             - printenv
+#             - bump_semver v3.0.0 major
+#             - bump_semver v3.0.0 minor
+#             - bump_semver v3.0.0 patch
+#             - bump_semver v3.0.0 beta
             - pushd $res_vijay_resourcePath    
 #             - touch keys
 #             - echo "name =$res_repo_pipe_gitProvider_name" >> keys
@@ -88,7 +88,7 @@ pipelines:
             - hash -d pip
             - pip install pytest           
             - py.test --verbose --junit-xml test-reports/results.xml test_calc.py
-            - save_tests $res_vijay_resourcePath/test-reports          
+            - save_tests $res_vijay_resourcePath/test_reports          
             - popd
 
       - name: test3
