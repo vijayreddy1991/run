@@ -146,7 +146,6 @@ pipelines:
       - name: powershell
         type: Powershell
         configuration:
-        configuration:
           nodePool: win_2019        
           integrations:
             - name: vijay_gitHub            
@@ -171,7 +170,6 @@ pipelines:
             
       - name: powershell2
         type: Powershell
-        configuration:
         configuration:
           nodePool: win_2019        
           integrations:
