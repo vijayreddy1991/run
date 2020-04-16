@@ -155,15 +155,15 @@ pipelines:
 #             - name: power2  
         execution:
           onExecute: 
-            - get-childitem $res_repo_pipe_resourcePath
+            - get-childitem $res_vijay_resourcePath
             - choco install python2
             - python --version
             - python -m pip install --upgrade pip
             - pip --version
             - pip install pytest
             - pytest --version
-            - Push-Location $res_repo_pipe_resourcePath
-            - get-childitem $res_repo_pipe_resourcePath
+            - Push-Location $res_vijay_resourcePath
+            - get-childitem $res_vijay_resourcePath
 #             - get-childitem tests/core/sampleExecutionFile
             #- pytest tests/test_sample.py
             - py.test --verbose --junit-xml test-reports/results.xml test_sample.py
@@ -182,15 +182,15 @@ pipelines:
             - name: powershell  
         execution:
           onExecute:             
-            - get-childitem $res_repo_pipe_resourcePath
+            - get-childitem $res_vijay_resourcePath
             - choco install python2
             - python --version
             - python -m pip install --upgrade pip
             - pip --version
             - pip install pytest
             - pytest --version
-            - Push-Location $res_repo_pipe_resourcePath
-            - get-childitem $res_repo_pipe_resourcePath
+            - Push-Location $res_vijay_resourcePath
+            - get-childitem $res_vijay_resourcePath
 #             - get-childitem tests/core/sampleExecutionFile
             #- pytest tests/test_sample.py
             - py.test --verbose --junit-xml test-reports/results.xml test_sample.py
