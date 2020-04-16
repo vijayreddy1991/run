@@ -195,6 +195,6 @@ pipelines:
             #- pytest tests/test_sample.py
             - py.test --verbose --junit-xml test-reports/results.xml test_sample.py
             
-            - Get-Content -Path test-reports/results.xml            
+#             - Get-Content -Path test-reports/results.xml            
             - save_tests test-reports/res.xml
 
