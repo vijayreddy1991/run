@@ -67,6 +67,7 @@ pipelines:
             - pip install pytest           
             - py.test --verbose --junit-xml test-reports/results.xml test_calc.py
             - save_tests $res_vijay_resourcePath/test.xml  
+            - ls -la
             - popd
            
       - name: power
