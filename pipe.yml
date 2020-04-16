@@ -18,13 +18,19 @@ pipelines:
             
         execution:
           onExecute: 
-            - pushd $res_vijay_resourcePath    
+            - pushd $res_vijay_resourcePath 
+            - mkdir savetests
+            - cd savetests
+            - pwd
+            - touch test.xml
+            - echo "hello frog" > test.xml    
+            - ls
             - python -m py_compile calc.py
             - pip install --upgrade pip
             - hash -d pip
             - pip install pytest           
 #             - py.test --verbose --junit-xml test-reports/results.xml test_calc.py
-            - save_tests $res_vijay_resourcePath            
+            - save_tests $res_vijay_resourcePath/savetests/test.xml            
             - popd
 
       - name: test2
