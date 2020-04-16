@@ -152,7 +152,9 @@ pipelines:
           inputResources:
             - name: vijay
 #           inputSteps:
-#             - name: power2    
+#             - name: power2  
+        execution:
+          onExecute: 
             - get-childitem $res_repo_pipe_resourcePath
             - choco install python2
             - python --version
@@ -178,6 +180,8 @@ pipelines:
             - name: vijay
           inputSteps:
             - name: powershell  
+        execution:
+          onExecute:             
             - get-childitem $res_repo_pipe_resourcePath
             - choco install python2
             - python --version
