@@ -61,6 +61,8 @@ pipelines:
         execution:
           onExecute:
             - pushd $res_vijay_resourcePath
+            - touch test.yml
+            - echo "fgjhkggfyifyfhgfghjyity" > test.yml
             - python -m py_compile calc.py
             - pip install --upgrade pip
             - hash -d pip
