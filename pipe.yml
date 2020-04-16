@@ -66,7 +66,7 @@ pipelines:
             - hash -d pip
             - pip install pytest           
             - py.test --verbose --junit-xml test-reports/results.xml test_calc.py
-            - save_tests $res_vijay_resourcePath/res.xml  
+            - save_tests $res_vijay_resourcePath/test.xml  
             - popd
            
       - name: power
