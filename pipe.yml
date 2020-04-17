@@ -248,4 +248,4 @@ pipelines:
 #             - get-childitem tests/core/sampleExecutionFile
             #- pytest tests/test_sample.py
 #             - py.test --verbose --junit-xml test-reports/results.xml test_sample.py           
-            - save_tests $res_vijay_resourcePath/test-reports            
+            - save_tests $res_vijay_resourcePath            
