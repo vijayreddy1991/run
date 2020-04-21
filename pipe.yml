@@ -253,7 +253,7 @@ pipelines:
       - name: powershell5
         type: PowerShell
         configuration:
-          nodePool: w19-static. #win_2019        
+          nodePool: w19-static #win_2019        
           integrations:
             - name: vijay_gitHub            
           inputResources:
