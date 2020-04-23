@@ -146,7 +146,7 @@ pipelines:
       - name: powershell
         type: PowerShell
         configuration:
-          nodePool: w19-static #win_2019        
+          nodePool: win_2019        
           integrations:
             - name: vijay_gitHub            
           inputResources:
@@ -173,7 +173,7 @@ pipelines:
       - name: powershell2
         type: PowerShell
         configuration:
-          nodePool: w19-static #win_2019        
+          nodePool: win_2019        
           integrations:
             - name: vijay_gitHub            
           inputResources:
@@ -201,7 +201,7 @@ pipelines:
       - name: powershell3
         type: PowerShell
         configuration:
-          nodePool: w19-static #win_2019        
+          nodePool: win_2019        
           integrations:
             - name: vijay_gitHub            
           inputResources:
@@ -227,7 +227,7 @@ pipelines:
       - name: powershell4
         type: PowerShell
         configuration:
-          nodePool: w19-static #win_2019        
+          nodePool: win_2019        
           integrations:
             - name: vijay_gitHub            
           inputResources:
@@ -253,7 +253,7 @@ pipelines:
       - name: powershell5
         type: PowerShell
         configuration:
-          nodePool: w19-static #win_2019        
+          nodePool: win_2019        
           integrations:
             - name: vijay_gitHub            
           inputResources:
@@ -280,7 +280,7 @@ pipelines:
       - name: powershell6
         type: PowerShell
         configuration:
-          nodePool: w19-static  #win_2019        
+          nodePool: win_2019        
           integrations:
             - name: vijay_gitHub            
           inputResources:
