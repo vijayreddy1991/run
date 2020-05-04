@@ -307,5 +307,4 @@ pipelines:
             - save_tests $res_vijay_resourcePath/test.xml  
             
             
-            
-      
+          
