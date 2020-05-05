@@ -20,6 +20,7 @@ pipelines:
         execution:
           onExecute:
             - echo testvariable="{{kumar}}"
+            - echo variable123=“{{ something }}”
             - echo vijay="kumar"
             - echo "{{vijay}}" 
             - echo $testvariable="{{gitBranch}}"
