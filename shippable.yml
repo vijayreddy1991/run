@@ -22,3 +22,4 @@ pipelines:
             - echo testvariable="{{kumar}}"
             - echo "{{vijay}}" 
             - echo "{{gitBranch}}"
+            - echo $testvariable
