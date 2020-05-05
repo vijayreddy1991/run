@@ -21,3 +21,4 @@ pipelines:
           onExecute:
             - echo testvariable="{{kumar}}"
             - echo "{{vijay}}" 
+            - echo "{{gitBranch}}"
