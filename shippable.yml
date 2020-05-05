@@ -1,0 +1,23 @@
+resources:
+      
+  - name: vijayRepo
+    type: GitRepo
+    configuration:
+      gitProvider: vijay_git
+      path: vijayreddy1991/run
+
+pipelines:
+
+  - name: vijay_pipeline
+    steps:
+
+      - name: branch
+        type: Bash
+        configuration:       
+          inputResources:
+            - name: vijayRepo
+
+        execution:
+          onExecute:
+            - echo testvariable="{{kumar}}"
+            - echo "{{vijay}}" 
