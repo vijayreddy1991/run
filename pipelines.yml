@@ -21,9 +21,9 @@ pipelines:
 
         execution:
           onExecute:
-            - "testvariable1={{kumar}}"
-            - "variable123={{ something }"
-            - "testvariable2={{gitBranch}}"
+            - write-output "testvariable1={{kumar}}"
+            - write-output "variable123={{ something }"
+            - write-output "testvariable2={{gitBranch}}"
             - $testvariable2           
 
 
