@@ -21,12 +21,10 @@ pipelines:
 
         execution:
           onExecute:
-            - echo testvariable="{{kumar}}"
-            - echo variable123={{ something }}
-            - echo vijay="kumar"
-            - echo "{{vijay}}" 
-            - echo $testvariable="{{gitBranch}}"
-            - echo "{{gitBranch}}"           
+            - testvariable1="{{kumar}}"
+            - echo variable123={{ something }
+            - testvariable2="{{gitBranch}}"
+            - $testvariable2           
 
 
 #       - name: restore_pipelines
