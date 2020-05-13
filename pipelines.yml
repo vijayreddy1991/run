@@ -52,18 +52,15 @@ pipelines:
 #             - export_pipeline_variables jfrog="pipelines.  "
 #             - export_run_variables jfrog1="pipelines1.   "   
 
-#       - name: restore
-#         type: PowerShell
-#         configuration:
-#           nodePool: win_2019         
-#           inputResources:
-#             - name: myRepo
-#           inputSteps:
-#             - name: functions
-#         execution:
-#           onExecute:
-#             - if($res_myRepo_jfrog1 -eq $null){ Write-Error "Stop" -ErrorAction Stop} 
-#             - if($res_myRepo_jfrog -eq $null){ Write-Error "Stop" -ErrorAction Stop}    
+      - name: restore
+        type: PowerShell
+        configuration:
+          nodePool: vijay_win_2019         
+          inputResources:
+            - name: myRepo
+        execution:
+          onExecute:
+            - write-output "execute"   
             
           
           
