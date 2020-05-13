@@ -4,7 +4,7 @@ resources:
   - name: myRepo
     type: GitRepo
     configuration:
-      gitProvider: vijay_git
+      gitProvider: vijay
       path: vijayreddy1991/run
 
 pipelines:
@@ -15,16 +15,16 @@ pipelines:
       - name: restore_files
         type: PowerShell
         configuration:
-          nodePool: win_2019         
+          nodePool: vijay_win_2019         
           inputResources:
             - name: myRepo
 
         execution:
           onExecute:
             - write-output "testvariable1={{kumar}}"
-            - write-output "variable123={{ something }"
-            - write-output "testvariable2={{gitBranch}}"
-            - $testvariable2           
+#             - write-output "variable123={{ something }"
+#             - write-output "testvariable2={{gitBranch}}"
+#             - $testvariable2           
 
 
 #       - name: restore_pipelines
