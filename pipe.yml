@@ -6,54 +6,54 @@ resources:
       path: vijayreddy1991/run           
       
 pipelines:
-  - name: test1
+  - name: vijay_test
     steps:
-      - name: test
-        type: Bash
-        configuration:
-          integrations:
-            - name: vijay_gitHub
-          inputResources:
-            - name: vijay
+#       - name: test
+#         type: Bash
+#         configuration:
+#           integrations:
+#             - name: vijay_gitHub
+#           inputResources:
+#             - name: vijay
             
-        execution:
-          onExecute: 
-            - pushd $res_vijay_resourcePath 
-            - mkdir savetests
-            - pushd savetests
-            - pwd
-            - touch test.xml
-            - echo "hello frog" > test.xml    
-            - ls
-            - popd
-            - python -m py_compile calc.py
-            - pip install --upgrade pip
-            - hash -d pip
-            - pip install pytest           
-#             - py.test --verbose --junit-xml test-reports/results.xml test_calc.py
-#             - save_tests $res_vijay_resourcePath/savetests/test.xml            
-            - popd
+#         execution:
+#           onExecute: 
+#             - pushd $res_vijay_resourcePath 
+#             - mkdir savetests
+#             - pushd savetests
+#             - pwd
+#             - touch test.xml
+#             - echo "hello frog" > test.xml    
+#             - ls
+#             - popd
+#             - python -m py_compile calc.py
+#             - pip install --upgrade pip
+#             - hash -d pip
+#             - pip install pytest           
+# #             - py.test --verbose --junit-xml test-reports/results.xml test_calc.py
+# #             - save_tests $res_vijay_resourcePath/savetests/test.xml            
+#             - popd
 
-      - name: test2
-        type: Bash
-        configuration:
-          integrations:
-            - name: vijay_gitHub
-          inputSteps:
-            - name: test
-          inputResources:
-            - name: vijay                
-        execution:
-          onExecute:
-            - printenv
-            - pushd $res_vijay_resourcePath
-            - python -m py_compile calc.py
-            - pip install --upgrade pip
-            - hash -d pip
-            - pip install pytest           
-#             - py.test --verbose --junit-xml test-reports/results.xml test_calc.py
-            - save_tests $res_vijay_resourcePath/jfrog         
-            - popd
+#       - name: test2
+#         type: Bash
+#         configuration:
+#           integrations:
+#             - name: vijay_gitHub
+#           inputSteps:
+#             - name: test
+#           inputResources:
+#             - name: vijay                
+#         execution:
+#           onExecute:
+#             - printenv
+#             - pushd $res_vijay_resourcePath
+#             - python -m py_compile calc.py
+#             - pip install --upgrade pip
+#             - hash -d pip
+#             - pip install pytest           
+# #             - py.test --verbose --junit-xml test-reports/results.xml test_calc.py
+#             - save_tests $res_vijay_resourcePath/jfrog         
+#             - popd
 
 #       - name: test3
 #         type: Bash
@@ -83,228 +83,226 @@ pipelines:
       - name: power
         type: Bash
         configuration:        
-          integrations:
-            - name: vijay_gitHub
           inputResources:
             - name: vijay
             
         execution:
           onExecute: 
             - pushd $res_vijay_resourcePath    
-            - python -m py_compile calc.py
-            - pip install --upgrade pip
-            - hash -d pip
-            - pip install pytest           
-            - py.test --verbose --junit-xml test-reports/results.xml test_calc.py
-            - save_tests $res_vijay_resourcePath            
-            - popd
+#             - python -m py_compile calc.py
+#             - pip install --upgrade pip
+#             - hash -d pip
+#             - pip install pytest           
+#             - py.test --verbose --junit-xml test-reports/results.xml test_calc.py
+#             - save_tests $res_vijay_resourcePath            
+#             - popd
 
-      - name: power2
-        type: bash
-        configuration:
-          integrations:
-            - name: vijay_gitHub
-          inputSteps:
-            - name: power
-          inputResources:
-            - name: vijay                
-        execution:
-          onExecute:
-            - printenv
-            - pushd $res_vijay_resourcePath
-            - python -m py_compile calc.py
-            - pip install --upgrade pip
-            - hash -d pip
-            - pip install pytest           
-            - py.test --verbose --junit-xml test-reports/results.xml test_calc.py
-            - save_tests $res_vijay_resourcePath/jfrog         
-            - popd
-
-      - name: power3
-        type: Bash
-        configuration:      
-          integrations:
-            - name: vijay_gitHub            
-          inputResources:
-            - name: vijay
-          inputSteps:
-            - name: power2         
-
-        execution:
-          onExecute:
-            - pushd $res_vijay_resourcePath
-            - python -m py_compile calc.py
-            - pip install --upgrade pip
-            - hash -d pip
-            - pip install pytest           
-            - py.test --verbose --junit-xml test-reports/results.xml test_calc.py
-            - save_tests $res_vijay_resourcePath/test-reports/jfrog.yml  
-            - popd
-            
-
-
-      - name: powershell
-        type: PowerShell
-        configuration:
-          nodePool: win_2019        
-          integrations:
-            - name: vijay_gitHub            
-          inputResources:
-            - name: vijay
+#       - name: power2
+#         type: bash
+#         configuration:
+#           integrations:
+#             - name: vijay_gitHub
 #           inputSteps:
-#             - name: power2  
-        execution:
-          onExecute: 
-            - get-childitem $res_vijay_resourcePath
-            - choco install python2
-            - python --version
-            - python -m pip install --upgrade pip
-            - pip --version
-            - pip install pytest
-            - pytest --version
-            - Push-Location $res_vijay_resourcePath
-            - get-childitem $res_vijay_resourcePath
-#             - get-childitem tests/core/sampleExecutionFile
-            #- pytest tests/test_sample.py
-            - py.test --verbose --junit-xml test-reports/results.xml test_sample.py
-            
-            - Get-Content -Path test-reports/results.xml
-            
-      - name: powershell2
-        type: PowerShell
-        configuration:
-          nodePool: win_2019        
-          integrations:
-            - name: vijay_gitHub            
-          inputResources:
-            - name: vijay
-          inputSteps:
-            - name: powershell  
-        execution:
-          onExecute:             
-            - get-childitem $res_vijay_resourcePath
-            - choco install python2
-            - python --version
-            - python -m pip install --upgrade pip
-            - pip --version
-            - pip install pytest
-            - pytest --version
-            - Push-Location $res_vijay_resourcePath
-            - get-childitem $res_vijay_resourcePath
-#             - get-childitem tests/core/sampleExecutionFile
-            #- pytest tests/test_sample.py
-            - py.test --verbose --junit-xml test-reports/results.xml test_sample.py
-            
-#             - Get-Content -Path test-reports/results.xml            
-            - save_tests $res_vijay_resourcePath
+#             - name: power
+#           inputResources:
+#             - name: vijay                
+#         execution:
+#           onExecute:
+#             - printenv
+#             - pushd $res_vijay_resourcePath
+#             - python -m py_compile calc.py
+#             - pip install --upgrade pip
+#             - hash -d pip
+#             - pip install pytest           
+#             - py.test --verbose --junit-xml test-reports/results.xml test_calc.py
+#             - save_tests $res_vijay_resourcePath/jfrog         
+#             - popd
 
-      - name: powershell3
-        type: PowerShell
-        configuration:
-          nodePool: win_2019        
-          integrations:
-            - name: vijay_gitHub            
-          inputResources:
-            - name: vijay
-          inputSteps:
-            - name: powershell2  
-        execution:
-          onExecute:             
-            - get-childitem $res_vijay_resourcePath
-            - choco install python2
-            - python --version
-            - python -m pip install --upgrade pip
-            - pip --version
-            - pip install pytest
-            - pytest --version
-            - Push-Location $res_vijay_resourcePath
-            - get-childitem $res_vijay_resourcePath
-#             - get-childitem tests/core/sampleExecutionFile
-            #- pytest tests/test_sample.py
-            - py.test --verbose --junit-xml test-reports/results.xml test_sample.py           
-            - save_tests $res_vijay_resourcePath/test-reports
+#       - name: power3
+#         type: Bash
+#         configuration:      
+#           integrations:
+#             - name: vijay_gitHub            
+#           inputResources:
+#             - name: vijay
+#           inputSteps:
+#             - name: power2         
+
+#         execution:
+#           onExecute:
+#             - pushd $res_vijay_resourcePath
+#             - python -m py_compile calc.py
+#             - pip install --upgrade pip
+#             - hash -d pip
+#             - pip install pytest           
+#             - py.test --verbose --junit-xml test-reports/results.xml test_calc.py
+#             - save_tests $res_vijay_resourcePath/test-reports/jfrog.yml  
+#             - popd
             
-      - name: powershell4
-        type: PowerShell
-        configuration:
-          nodePool: win_2019        
-          integrations:
-            - name: vijay_gitHub            
-          inputResources:
-            - name: vijay
-          inputSteps:
-            - name: powershell3  
-        execution:
-          onExecute:             
-            - get-childitem $res_vijay_resourcePath
-            - choco install python2
-            - python --version
-            - python -m pip install --upgrade pip
-            - pip --version
-            - pip install pytest
-            - pytest --version
-            - Push-Location $res_vijay_resourcePath
-            - get-childitem $res_vijay_resourcePath
-#             - get-childitem tests/core/sampleExecutionFile
-            #- pytest tests/test_sample.py
-#             - py.test --verbose --junit-xml test-reports/results.xml test_sample.py           
-            - save_tests $res_vijay_resourcePath    
+
+
+#       - name: powershell
+#         type: PowerShell
+#         configuration:
+#           nodePool: win_2019        
+#           integrations:
+#             - name: vijay_gitHub            
+#           inputResources:
+#             - name: vijay
+# #           inputSteps:
+# #             - name: power2  
+#         execution:
+#           onExecute: 
+#             - get-childitem $res_vijay_resourcePath
+#             - choco install python2
+#             - python --version
+#             - python -m pip install --upgrade pip
+#             - pip --version
+#             - pip install pytest
+#             - pytest --version
+#             - Push-Location $res_vijay_resourcePath
+#             - get-childitem $res_vijay_resourcePath
+# #             - get-childitem tests/core/sampleExecutionFile
+#             #- pytest tests/test_sample.py
+#             - py.test --verbose --junit-xml test-reports/results.xml test_sample.py
             
-      - name: powershell5
-        type: PowerShell
-        configuration:
-          nodePool: win_2019        
-          integrations:
-            - name: vijay_gitHub            
-          inputResources:
-            - name: vijay
-          inputSteps:
-            - name: powershell4  
-        execution:
-          onExecute:             
-            - get-childitem $res_vijay_resourcePath
-            - choco install python2
-            - python --version
-            - python -m pip install --upgrade pip
-            - pip --version
-            - pip install pytest
-            - pytest --version
-            - Push-Location $res_vijay_resourcePath
-            - get-childitem $res_vijay_resourcePath
-#             - get-childitem tests/core/sampleExecutionFile
-            #- pytest tests/test_sample.py
+#             - Get-Content -Path test-reports/results.xml
+            
+#       - name: powershell2
+#         type: PowerShell
+#         configuration:
+#           nodePool: win_2019        
+#           integrations:
+#             - name: vijay_gitHub            
+#           inputResources:
+#             - name: vijay
+#           inputSteps:
+#             - name: powershell  
+#         execution:
+#           onExecute:             
+#             - get-childitem $res_vijay_resourcePath
+#             - choco install python2
+#             - python --version
+#             - python -m pip install --upgrade pip
+#             - pip --version
+#             - pip install pytest
+#             - pytest --version
+#             - Push-Location $res_vijay_resourcePath
+#             - get-childitem $res_vijay_resourcePath
+# #             - get-childitem tests/core/sampleExecutionFile
+#             #- pytest tests/test_sample.py
+#             - py.test --verbose --junit-xml test-reports/results.xml test_sample.py
+            
+# #             - Get-Content -Path test-reports/results.xml            
+#             - save_tests $res_vijay_resourcePath
+
+#       - name: powershell3
+#         type: PowerShell
+#         configuration:
+#           nodePool: win_2019        
+#           integrations:
+#             - name: vijay_gitHub            
+#           inputResources:
+#             - name: vijay
+#           inputSteps:
+#             - name: powershell2  
+#         execution:
+#           onExecute:             
+#             - get-childitem $res_vijay_resourcePath
+#             - choco install python2
+#             - python --version
+#             - python -m pip install --upgrade pip
+#             - pip --version
+#             - pip install pytest
+#             - pytest --version
+#             - Push-Location $res_vijay_resourcePath
+#             - get-childitem $res_vijay_resourcePath
+# #             - get-childitem tests/core/sampleExecutionFile
+#             #- pytest tests/test_sample.py
 #             - py.test --verbose --junit-xml test-reports/results.xml test_sample.py           
-            - save_tests $res_vijay_resourcePath/tests  
+#             - save_tests $res_vijay_resourcePath/test-reports
+            
+#       - name: powershell4
+#         type: PowerShell
+#         configuration:
+#           nodePool: win_2019        
+#           integrations:
+#             - name: vijay_gitHub            
+#           inputResources:
+#             - name: vijay
+#           inputSteps:
+#             - name: powershell3  
+#         execution:
+#           onExecute:             
+#             - get-childitem $res_vijay_resourcePath
+#             - choco install python2
+#             - python --version
+#             - python -m pip install --upgrade pip
+#             - pip --version
+#             - pip install pytest
+#             - pytest --version
+#             - Push-Location $res_vijay_resourcePath
+#             - get-childitem $res_vijay_resourcePath
+# #             - get-childitem tests/core/sampleExecutionFile
+#             #- pytest tests/test_sample.py
+# #             - py.test --verbose --junit-xml test-reports/results.xml test_sample.py           
+#             - save_tests $res_vijay_resourcePath    
+            
+#       - name: powershell5
+#         type: PowerShell
+#         configuration:
+#           nodePool: win_2019        
+#           integrations:
+#             - name: vijay_gitHub            
+#           inputResources:
+#             - name: vijay
+#           inputSteps:
+#             - name: powershell4  
+#         execution:
+#           onExecute:             
+#             - get-childitem $res_vijay_resourcePath
+#             - choco install python2
+#             - python --version
+#             - python -m pip install --upgrade pip
+#             - pip --version
+#             - pip install pytest
+#             - pytest --version
+#             - Push-Location $res_vijay_resourcePath
+#             - get-childitem $res_vijay_resourcePath
+# #             - get-childitem tests/core/sampleExecutionFile
+#             #- pytest tests/test_sample.py
+# #             - py.test --verbose --junit-xml test-reports/results.xml test_sample.py           
+#             - save_tests $res_vijay_resourcePath/tests  
            
             
-      - name: powershell6
-        type: PowerShell
-        configuration:
-          nodePool: win_2019        
-          integrations:
-            - name: vijay_gitHub            
-          inputResources:
-            - name: vijay
-          inputSteps:
-            - name: powershell5  
-        execution:
-          onExecute:             
-            - get-childitem $res_vijay_resourcePath
-            - choco install python2
-            - python --version
-            - python -m pip install --upgrade pip
-            - pip --version
-            - pip install pytest
-            - pytest --version
-            - Push-Location $res_vijay_resourcePath
-            - get-childitem $res_vijay_resourcePath
-#             - get-childitem tests/core/sampleExecutionFile
-            #- pytest tests/test_sample.py
-#             - py.test --verbose --junit-xml test-reports/results.xml test_sample.py            
-            - Set-Content -Path "$res_vijay_resourcePath/test.xml" -Value "ghjhkggyibgj" 
-            - get-childitem $res_vijay_resourcePath
-            - get-Content $res_vijay_resourcePath/test.xml
-            - save_tests $res_vijay_resourcePath/test.xml  
+#       - name: powershell6
+#         type: PowerShell
+#         configuration:
+#           nodePool: win_2019        
+#           integrations:
+#             - name: vijay_gitHub            
+#           inputResources:
+#             - name: vijay
+#           inputSteps:
+#             - name: powershell5  
+#         execution:
+#           onExecute:             
+#             - get-childitem $res_vijay_resourcePath
+#             - choco install python2
+#             - python --version
+#             - python -m pip install --upgrade pip
+#             - pip --version
+#             - pip install pytest
+#             - pytest --version
+#             - Push-Location $res_vijay_resourcePath
+#             - get-childitem $res_vijay_resourcePath
+# #             - get-childitem tests/core/sampleExecutionFile
+#             #- pytest tests/test_sample.py
+# #             - py.test --verbose --junit-xml test-reports/results.xml test_sample.py            
+#             - Set-Content -Path "$res_vijay_resourcePath/test.xml" -Value "ghjhkggyibgj" 
+#             - get-childitem $res_vijay_resourcePath
+#             - get-Content $res_vijay_resourcePath/test.xml
+#             - save_tests $res_vijay_resourcePath/test.xml  
             
             
           
