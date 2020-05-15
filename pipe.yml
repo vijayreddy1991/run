@@ -158,15 +158,15 @@ pipelines:
 #             - ls -la
 #             - popd
            
-      - name: power
-        type: Bash
-        configuration:        
-          inputResources:
-            - name: vijay
+#       - name: power
+#         type: Bash
+#         configuration:        
+#           inputResources:
+#             - name: vijay
             
-        execution:
-          onExecute: 
-            - pushd $res_vijay_resourcePath    
+#         execution:
+#           onExecute: 
+#             - pushd $res_vijay_resourcePath    
 #             - python -m py_compile calc.py
 #             - pip install --upgrade pip
 #             - hash -d pip
