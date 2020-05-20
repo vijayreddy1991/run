@@ -56,18 +56,18 @@ pipelines:
             - df -h
             - docker pull drydock/c7javall:master
             - df -h
-            - docker pull drydock/c7phpall:master
-            - df -h
-            - docker pull drydock/c7scaall:master
-            - df -h
-            - docker pull drydock/c7nodall:master
-            - df -h
-            - docker pull drydock/u18node:master
-            - df -h
-            - docker pull drydock/u16node:master
-            - df -h
-            - docker pull ubuntu
-            - df -h
+#             - docker pull drydock/c7phpall:master
+#             - df -h
+#             - docker pull drydock/c7scaall:master
+#             - df -h
+#             - docker pull drydock/c7nodall:master
+#             - df -h
+#             - docker pull drydock/u18node:master
+#             - df -h
+#             - docker pull drydock/u16node:master
+#             - df -h
+#             - docker pull ubuntu
+#             - df -h
           onSuccess:
             - echo "Job well done!"   
     
