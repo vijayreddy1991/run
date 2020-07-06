@@ -5,6 +5,14 @@ resources:
     configuration:
       gitProvider: vijay
       path: vijayreddy1991/run
+      
+  - name: mypropertyBag
+    type: PropertyBag
+    configuration:
+      key1: value1
+      key2: value2
+      key3: value3
+      key4: value4      
 
 pipelines:
   - name: vijay_pipeline
@@ -16,8 +24,10 @@ pipelines:
           nodePool: vijay          
           inputResources:
             - name: vijayRepo
+            - name: mypropertyBag
 
         execution:
           onExecute:
             - echo "testvariable"
+            - printenv
 
