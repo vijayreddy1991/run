@@ -21,7 +21,7 @@ pipelines:
       - name: vijay_step
         type: Bash
         configuration: 
-          nodePool: vijay          
+#          nodePool: vijay          
           inputResources:
             - name: vijayRepo
             - name: mypropertyBag
