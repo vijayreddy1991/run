@@ -18,7 +18,20 @@ pipelines:
   - name: vijay_pipeline
     steps:
 
-      - name: vijay_step
+      - name: vijay_step1
+        type: Bash
+        configuration: 
+#          nodePool: vijay          
+          inputResources:
+            - name: vijayRepo
+            - name: mypropertyBag
+
+        execution:
+          onExecute:
+            - echo "testvariable"
+            - printenv
+
+      - name: vijay_step2
         type: Bash
         configuration: 
 #          nodePool: vijay          
