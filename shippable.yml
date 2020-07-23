@@ -34,7 +34,7 @@ pipelines:
       - name: vijay_step2
         type: Bash
         configuration: 
-          nodePool: u18dynamic          
+          nodePool: u16dynamic          
           inputResources:
             - name: vijayRepo
             - name: mypropertyBag
