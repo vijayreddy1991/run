@@ -1,0 +1,31 @@
+resources:
+  - name: git_vijay
+    type: GitRepo
+    configuration:
+      gitProvider: vijay
+      path: vijayreddy1991/runtime
+  
+        
+#   - name: git_repo1
+#     type: GitRepo
+#     configuration:
+#       gitProvider: vijay
+#       path: vijayreddy1991/runtime
+#       branches:     
+#         include: master
+#       files:  # optional
+#         include: ^pipe.yml$         
+
+pipelines:
+  - name: pipelines_vijay
+    steps:
+      - name: S_Bash120
+        type: Bash
+        configuration: 
+          inputResources:          
+            - name: git_vijay
+              trigger: false              
+        execution:
+          onExecute:
+            - echo "executing step..."
+            - printenv
