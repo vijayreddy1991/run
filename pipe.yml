@@ -3,8 +3,6 @@
 
 
 
-
-
 resources:
   - name: vijaykumar
     type: GitRepo
