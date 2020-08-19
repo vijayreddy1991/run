@@ -1,66 +1,17 @@
 
-resources:
-      
-  - name: myRepo
-    type: GitRepo
-    configuration:
-      gitProvider: vijay
-      path: vijayreddy1991/run
 
 pipelines:
 
   - name: vijay_pipeline_power
     steps:
 
-      - name: restore_files
-        type: PowerShell
-        configuration:
-          nodePool: vijay_win_2019         
-          inputResources:
-            - name: myRepo
-
+      - name: restore_pipelines
+        type: Bash
+        configuration:       
         execution:
           onExecute:
-            - write-output "testvariable1={{kumar}}"
-#             - write-output "variable123={{ something }"
-#             - write-output "testvariable2={{gitBranch}}"
-#             - $testvariable2           
+            - printenv  
 
-
-#       - name: restore_pipelines
-#         type: Bash
-#         configuration:       
-#           inputResources:
-#             - name: myRepo
-#           inputSteps:
-#             - name: restore_files
-#         execution:
-#           onExecute:
-#             - printenv
-
-#       - name: functions
-#         type: Bash
-#         configuration:     
-#           inputResources:
-#             - name: myRepo
-# #           inputSteps:
-# #             - name: restore_pipelines
-#         execution:
-#           onExecute:
-#             - add_run_variables testvariable="asdffdjksfjk566851"
-#             - add_pipeline_variables vijay="kumar.      1"     
-#             - export_pipeline_variables jfrog="pipelines.  "
-#             - export_run_variables jfrog1="pipelines1.   "   
-
-      - name: restore
-        type: PowerShell
-        configuration:
-          nodePool: vijay_win_2019         
-          inputResources:
-            - name: myRepo
-        execution:
-          onExecute:
-            - write-output "execute"   
             
           
           
