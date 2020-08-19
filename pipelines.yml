@@ -6,8 +6,7 @@ pipelines:
     steps:
 
       - name: restore_pipelines
-        type: Bash
-        configuration:       
+        type: Bash    
         execution:
           onExecute:
             - printenv  
