@@ -2,7 +2,7 @@ resources:
   - name: git_vijay
     type: GitRepo
     configuration:
-      gitProvider: vijay
+      gitProvider: vijaykp
       path: vijayreddy1991/run
       branches:     
         include: master
