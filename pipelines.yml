@@ -1,4 +1,11 @@
-
+resources:
+  - name: git_vijay
+    type: GitRepo
+    configuration:
+      gitProvider: vijay
+      path: vijayreddy1991/run
+      branches:     
+        include: master
 
 pipelines:
 
@@ -6,7 +13,10 @@ pipelines:
     steps:
 
       - name: restore_pipelines
-        type: Bash    
+        type: Bash 
+        configuration:         
+          inputResources:          
+            - name: git_vijay         
         execution:
           onExecute:
             - printenv  
