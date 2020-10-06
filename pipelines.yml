@@ -2,17 +2,17 @@ resources:
   - name: git_vijay
     type: GitRepo
     configuration:
-      gitProvider: vijay
+      gitProvider: s_gitHub
       path: vijayreddy1991/run
       branches:     
         include: master
 
 pipelines:
 
-  - name: vijay_pipeline_power
+  - name: vijay_super
     steps:
 
-      - name: restore_pipelines
+      - name: restore_pipelines1
         type: Bash 
         configuration:         
           inputResources:          
@@ -20,7 +20,27 @@ pipelines:
         execution:
           onExecute:
             - printenv  
+       
+  - name: vijay_project_Admin
+    steps:
 
-            
-          
-          
+      - name: restore_pipelines2
+        type: Bash 
+        configuration:         
+          inputResources:          
+            - name: git_vijay         
+        execution:
+          onExecute:
+            - printenv       
+
+  - name: vijay_Admin
+    steps:
+
+      - name: restore_pipelines3
+        type: Bash 
+        configuration:         
+          inputResources:          
+            - name: git_vijay         
+        execution:
+          onExecute:
+            - printenv 
