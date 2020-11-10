@@ -3,8 +3,7 @@ resources:
     type: GitRepo
     configuration:
       gitProvider: vijay
-      path: vijayreddy1991/run           
-      
+      path: vijayreddy1991/run                 
 pipelines:
   - name: vijay_test
     steps:
