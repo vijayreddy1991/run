@@ -4,7 +4,10 @@ resources:
     configuration:
       gitProvider: vijay
       path: vijayreddy1991/run
-  
+      branches:     
+        include: master
+      files:  # optional
+        include: ^pipe.yml$      
         
   - name: git_repo1
     type: GitRepo
@@ -13,8 +16,8 @@ resources:
       path: vijayreddy1991/run
       branches:     
         include: master
-#       files:  # optional
-#         include: ^pipe.yml$         
+      files:  # optional
+        include: ^shippable.yml$         
 
 pipelines:
   - name: pipelines_vijay
