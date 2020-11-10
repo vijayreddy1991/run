@@ -1,5 +1,7 @@
 resources:
-      
+  
+  
+  
   - name: vijayRepo
     type: GitRepo
     configuration:
