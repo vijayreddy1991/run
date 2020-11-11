@@ -3,8 +3,7 @@ resources:
     type: GitRepo
     configuration:
       gitProvider: vijay
-      path: vijayreddy1991/run    
-            
+      path: vijayreddy1991/run                
 pipelines:
   - name: vijay_test
     steps:
@@ -380,10 +379,3 @@ pipelines:
 #             - get-childitem $res_vijay_resourcePath
 #             - get-Content $res_vijay_resourcePath/test.xml
 #             - save_tests $res_vijay_resourcePath/test.xml  
-            
-    
-    
-    
-    
-    
-          
