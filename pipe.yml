@@ -4,9 +4,7 @@ resources:
     configuration:
       gitProvider: vijay
       path: vijayreddy1991/run  
-      
-      
-      
+            
 pipelines:
   - name: vijay_test
     steps:
