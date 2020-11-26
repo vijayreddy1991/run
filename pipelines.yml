@@ -1,11 +1,11 @@
-resources:
-  - name: git_vijay
-    type: GitRepo
-    configuration:
-      gitProvider: vijay
-      path: vijayreddy1991/run
-      branches:     
-        include: master
+# resources:
+#   - name: git_vijay
+#     type: GitRepo
+#     configuration:
+#       gitProvider: vijay
+#       path: vijayreddy1991/run
+#       branches:     
+#         include: master
 
 pipelines:
 
@@ -14,33 +14,33 @@ pipelines:
 
       - name: restore_pipelines1
         type: Bash 
-        configuration:         
-          inputResources:          
-            - name: git_vijay         
+#         configuration:         
+#           inputResources:          
+#             - name: git_vijay         
         execution:
           onExecute:
             - printenv  
        
-  - name: vijay_project_Admin
-    steps:
+#   - name: vijay_project_Admin
+#     steps:
 
-      - name: restore_pipelines2
-        type: Bash 
-        configuration:         
-          inputResources:          
-            - name: git_vijay         
-        execution:
-          onExecute:
-            - printenv       
+#       - name: restore_pipelines2
+#         type: Bash 
+#         configuration:         
+#           inputResources:          
+#             - name: git_vijay         
+#         execution:
+#           onExecute:
+#             - printenv       
 
-  - name: vijay_Admin
-    steps:
+#   - name: vijay_Admin
+#     steps:
 
-      - name: restore_pipelines3
-        type: Bash 
-        configuration:         
-          inputResources:          
-            - name: git_vijay         
-        execution:
-          onExecute:
-            - printenv 
+#       - name: restore_pipelines3
+#         type: Bash 
+#         configuration:         
+#           inputResources:          
+#             - name: git_vijay         
+#         execution:
+#           onExecute:
+#             - printenv 
