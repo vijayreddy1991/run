@@ -20,6 +20,7 @@ pipelines:
         execution:
           onExecute:
             - printenv  
+            - printen
        
 #   - name: vijay_project_Admin
 #     steps:
