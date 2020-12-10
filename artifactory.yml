@@ -59,3 +59,16 @@ pipelines:
               [ ! -z "$res_vijay_artifactory_resourceId" ]
             - |
               [ ! -z "$res_vijay_artifactory_sourceArtifactory_masterName" ]
+              
+  - name: vijay_pipelines_S_Bash_0130
+    steps:
+      - name: vijay_S_Bash_0130
+        type: Bash
+        configuration:
+          inputResources:
+            - name: vijay_artifactory
+              trigger: false
+        execution:
+          onExecute:
+            - echo "executing step..."
+
