@@ -14,9 +14,9 @@ pipelines:
 
       - name: restore_pipelines1
         type: Bash 
-#         configuration:         
-#           inputResources:          
-#             - name: git_vijay         
+        configuration:         
+          inputResources:          
+            - name: git_vijay         
         execution:
           onExecute:
             - printenv  
