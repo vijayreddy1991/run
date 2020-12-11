@@ -20,6 +20,7 @@ pipelines:
         execution:
           onExecute:
             - printenv  
+            - sleep 60
 #             - printen
        
 #   - name: vijay_project_Admin
@@ -32,7 +33,8 @@ pipelines:
             - name: git_vijay         
         execution:
           onExecute:
-            - printenv       
+            - printenv   
+            - sleep 60
 
 #   - name: vijay_Admin
 #     steps:
@@ -45,3 +47,4 @@ pipelines:
         execution:
           onExecute:
             - printenv 
+            - sleep 60
