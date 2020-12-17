@@ -21,7 +21,7 @@ pipelines:
         execution:
           onExecute:
             - printenv  
-            - sleep 60
+#             - sleep 60
 #             - printen
        
 #   - name: vijay_project_Admin
