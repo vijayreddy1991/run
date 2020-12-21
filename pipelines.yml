@@ -15,7 +15,7 @@ pipelines:
       - name: restore_pipelines1
         type: Bash 
         configuration: 
-#           timeoutSeconds: 10    
+          timeoutSeconds: 10    
           inputResources:          
             - name: git_vijay         
         execution:
