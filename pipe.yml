@@ -381,7 +381,4 @@ pipelines:
 #             - Set-Content -Path "$res_vijay_resourcePath/test.xml" -Value "ghjhkggyibgj" 
 #             - get-childitem $res_vijay_resourcePath
 #             - get-Content $res_vijay_resourcePath/test.xml
-#             - save_tests $res_vijay_resourcePath/test.xml  
-
-
-
+#             - save_tests $res_vijay_resourcePath/test.xml 
