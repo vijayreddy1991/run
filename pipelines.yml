@@ -1,5 +1,5 @@
 resources:
-  - name: git_vijay
+  - name: git_vijaytest
     type: GitRepo
     configuration:
       gitProvider: vijay
@@ -11,13 +11,12 @@ pipelines:
 
   - name: vijay_super
     steps:
-
       - name: restore_pipelines1
         type: Bash 
         configuration: 
-#           timeoutSeconds: 10    
+          nodePool: vijay   
           inputResources:          
-            - name: git_vijay         
+            - name: git_vijaytest         
         execution:
           onExecute:
             - printenv  
