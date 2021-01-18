@@ -14,7 +14,7 @@ pipelines:
       - name: restore_pipelines1
         type: Bash 
         configuration: 
-          nodePool: vijay   
+#           nodePool: vijay   
           inputResources:          
             - name: git_vijaytest         
         execution:
