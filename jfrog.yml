@@ -13,7 +13,7 @@ resources:
     type: GitRepo
     configuration:
       gitProvider: vijay
-      path: vijayreddy1991/run
+      path: vijayreddy1991/runtime
       branches:     
         include: master
       files:  # optional
