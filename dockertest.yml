@@ -1,7 +1,7 @@
 pipelines:
-  - name: pipelines_S_Bash_0280
+  - name: pipelines_S_Bash_vijay
     steps:
-      - name: S_Bash_0280
+      - name: S_Bash_vijay
         type: Bash
         configuration:
           integrations:
