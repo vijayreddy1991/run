@@ -4,7 +4,7 @@ resources:
     configuration:
       sourceArtifactory: s_artifactory
       aql: '{"items.find":{"name":{"$match":"s_foo*"}}}'
-      target: "/testing/"
+      target: "/fileSpecBash/"
 pipelines:
   - name: pipelines_S_Bash_0539
     steps:
