@@ -28,6 +28,8 @@ pipelines:
           onExecute:
             - cd /setup
             - ls
+            - cd setup
+            - ls
             - echo "executing step"
             - if [ -f "/setup/test*" ]; then echo "found the file"; fi
             - ls
