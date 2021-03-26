@@ -27,9 +27,9 @@ pipelines:
           onExecute:
             - echo "executing step"
             - pushd $res_S_Bash_0539_FileSpec_resourcePath
-            - if [ -f "/setup/test*" ]; then echo "found the file"; fi
+            - if [ -f "./setup/test*" ]; then echo "found the file"; fi
             - ls
-            - if [ ! -f "/setup/test*" ]; then echo "error finding the file"; exit 1; fi            
+            - if [ ! -f "./setup/test*" ]; then echo "error finding the file"; exit 1; fi            
             - popd 
 
             
