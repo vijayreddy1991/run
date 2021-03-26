@@ -4,7 +4,6 @@ resources:
     configuration:
       sourceArtifactory: s_artifactory
       aql: '{"items.find":{"name":{"$match":"test*"}}}'
-      target: "/setup/"
 
   - name: S_Bash_0543_FileSpec
     type: FileSpec
@@ -26,20 +25,13 @@ pipelines:
             - name: S_Bash_0539_FileSpec
         execution:
           onExecute:
-            - cd /setup
-            - ls
-            - cd setup
-            - ls
             - echo "executing step"
+            - pushd $res_S_Bash_0539_FileSpec_resourcePath
             - if [ -f "/setup/test*" ]; then echo "found the file"; fi
             - ls
-            - cd dependencyState/resources/S_Bash_0539_FileSpec
-            - ls
-            - pushd $res_S_Bash_0539_FileSpec_resourcePath
-            - ls
-            
+            - if [ ! -f "/setup/test*" ]; then echo "error finding the file"; exit 1; fi            
             - popd 
-            - if [ ! -f "/test*" ]; then echo "error finding the file"; exit 1; fi
+
             
             
 
