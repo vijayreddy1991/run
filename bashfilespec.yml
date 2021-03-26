@@ -32,6 +32,7 @@ pipelines:
             - cd dependencyState/resources/S_Bash_0539_FileSpec
             - ls
             - pushd $res_S_Bash_0539_FileSpec_resourcePath
+            - cd ../../..
             - ls
             - popd 
             - if [ ! -f "/setup/s_foo" ]; then echo "error finding the file"; exit 1; fi
