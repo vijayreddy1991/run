@@ -27,8 +27,9 @@ pipelines:
         execution:
           onExecute:
             - echo "executing step"
-            - if [ -f "*/s_foo" ]; then echo "found the file"; fi
-            - if [ ! -f "*/s_foo" ]; then echo "error finding the file"; exit 1; fi
+            - if [ -f "/fileSpecBash/s_foo" ]; then echo "found the file"; fi
+            - ls
+            - if [ ! -f "/fileSpecBash/s_foo" ]; then echo "error finding the file"; exit 1; fi
             
             
 
