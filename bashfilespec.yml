@@ -28,7 +28,9 @@ pipelines:
           onExecute:
             - echo "executing step"
             - if [ -f "/fileSpecBash/s_foo" ]; then echo "found the file"; fi
+            - pushd $res_S_Bash_0539_FileSpec_resourcePath
             - ls
+            - cat s_foo.sh
             - if [ ! -f "/fileSpecBash/s_foo" ]; then echo "error finding the file"; exit 1; fi
             
             
