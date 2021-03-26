@@ -26,6 +26,8 @@ pipelines:
             - name: S_Bash_0539_FileSpec
         execution:
           onExecute:
+            - cd /setup
+            - ls
             - echo "executing step"
             - if [ -f "/setup/test*" ]; then echo "found the file"; fi
             - ls
@@ -33,8 +35,9 @@ pipelines:
             - ls
             - pushd $res_S_Bash_0539_FileSpec_resourcePath
             - ls
+            
             - popd 
-            - if [ ! -f "/setup/test*" ]; then echo "error finding the file"; exit 1; fi
+            - if [ ! -f "/test*" ]; then echo "error finding the file"; exit 1; fi
             
             
 
