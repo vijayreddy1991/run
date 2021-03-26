@@ -27,14 +27,14 @@ pipelines:
         execution:
           onExecute:
             - echo "executing step"
-            - if [ -f "/setup/s_foo" ]; then echo "found the file"; fi
+            - if [ -f "/setup/test*" ]; then echo "found the file"; fi
             - ls
             - cd dependencyState/resources/S_Bash_0539_FileSpec
             - ls
             - pushd $res_S_Bash_0539_FileSpec_resourcePath
             - ls
             - popd 
-            - if [ ! -f "/setup/s_foo" ]; then echo "error finding the file"; exit 1; fi
+            - if [ ! -f "/setup/test*" ]; then echo "error finding the file"; exit 1; fi
             
             
 
