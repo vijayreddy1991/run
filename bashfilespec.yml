@@ -9,7 +9,7 @@ resources:
     type: FileSpec
     configuration:
       sourceArtifactory: s_artifactory
-      pattern: "*/s_foo"
+      pattern: "s_foo"
       limit: 1
       sortBy:
         - created
