@@ -18,7 +18,7 @@ resources:
     type: FileSpec
     configuration:
       sourceArtifactory: s_artifactory
-      pattern: "*/s_foo*"
+      pattern: "test-automation-generic-local/fileSpecBash/s_foo"
       limit: 1
       excludePatterns:
         - "test-automation-generic-local/fileSpecBash/pipeInfo.json"
@@ -27,7 +27,7 @@ resources:
     type: FileSpec
     configuration:
       sourceArtifactory: s_artifactory
-      pattern: "*/s_foo*"
+      pattern: "test-automation-generic-local/fileSpecBash/s_foo"
       limit: 1
       exclusions:
         - "test-automation-generic-local/fileSpecBash/pipeInfo.json"        
