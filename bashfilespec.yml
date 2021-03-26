@@ -10,9 +10,9 @@ resources:
     configuration:
       sourceArtifactory: s_artifactory
       pattern: "*/s_foo*"
-      limit: 1
-      sortBy:
-        - created
+#       limit: 1
+#       sortBy:
+#         - created
       
 pipelines:
   - name: pipelines_S_Bash_0539
