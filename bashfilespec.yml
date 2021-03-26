@@ -3,13 +3,13 @@ resources:
     type: FileSpec
     configuration:
       sourceArtifactory: s_artifactory
-      aql: '{"items.find":{"name":{"$match":"foo*"}}}'
+      aql: '{"items.find":{"name":{"$match":"foo"}}}'
 
   - name: S_Bash_0543_FileSpec
     type: FileSpec
     configuration:
       sourceArtifactory: s_artifactory
-      pattern: "*/s_foo*"
+      pattern: "*/s_foo"
       limit: 1
       sortBy:
         - created
