@@ -3,7 +3,7 @@ resources:
     type: FileSpec
     configuration:
       sourceArtifactory: s_artifactory
-      aql: '{"items.find":{"name":{"$match":"*/s_foo*"}}}'
+      aql: '{"items.find":{"name":{"$match":"*/*/s_foo*"}}}'
       target: "/fileSpecBash/"
 
   - name: S_Bash_0543_FileSpec
