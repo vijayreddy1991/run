@@ -96,8 +96,9 @@ pipelines:
         execution:
           onExecute:
             - echo "executing step"
-            - pushd $res_S_Bash_0544_FileSpec_resourcePath
+            - pushd $res_S_Bash_0545_FileSpec_resourcePath
             - if [ -f "./fileSpecBash/s_foo" ]; then echo "found the file"; fi
             - if [ -f "./fileSpecBash/pipeInfo.json" ]; then echo "wrong file found"; exit 1; fi
-            - if [ ! -f "./fileSpecBash/s_foo" ]; then echo "error finding the file"; exit 1; fi            
+            - if [ ! -f "./fileSpecBash/s_foo" ]; then echo "error finding the file"; exit 1; fi  
+            - popd
             
