@@ -34,7 +34,7 @@ pipelines:
             - pushd $res_S_Bash_0539_FileSpec_resourcePath
             - ls
             - popd 
-            - if [ ! -f "/s_foo*" ]; then echo "error finding the file"; exit 1; fi
+            - if [ ! -f "/setup/s_foo" ]; then echo "error finding the file"; exit 1; fi
             
             
 
