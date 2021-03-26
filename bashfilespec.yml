@@ -28,9 +28,6 @@ pipelines:
             - echo "executing step"
             - pushd $res_S_Bash_0539_FileSpec_resourcePath
             - if [ -f "./setup/test.ps1" ]; then echo "found the file"; fi
-            - ls
-            - cd setup
-            - ls
             - if [ ! -f "./setup/test.ps1" ]; then echo "error finding the file"; exit 1; fi            
             - popd 
 
