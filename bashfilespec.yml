@@ -44,7 +44,7 @@ pipelines:
           onExecute:
             - echo "executing step"
             - ls
-            - pushd $res_S_Bash_0539_FileSpec_resourcePath
+            - pushd $res_S_Bash_0543_FileSpec_resourcePath
             - if [ -f "./fileSpecBash/s_foo" ]; then echo "found the file"; fi
             - if [ ! -f "./fileSpecBash/s_foo" ]; then echo "error finding the file"; exit 1; fi  
             - popd
