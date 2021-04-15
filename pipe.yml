@@ -11,65 +11,65 @@ pipelines:
       - name: S_vijay
         type: Bash #PowerShell
         configuration: 
-#           nodePool: vijay_win_2019        
+          nodePool: k8_u16dynamic        
           inputResources:
             - name: vijaykumar
-          runtime:
-            type: host
+#           runtime:
+#             type: host
          
         execution:
           onExecute:
             - echo "executing step..."
-            - df -h
-            - docker images
-            - cd /opt
-            - pwd
-            - docker images
-            - df -h
-            - docker pull drydock/u16all:master
-            - df -h
-            - docker pull drydock/u16javall:master
-            - df -h
-            - docker pull drydock/u16phpall:master
-            - df -h
-            - docker pull drydock/u16scaall:master
-            - df -h
-            - docker pull drydock/u16nodall:master
-            - df -h
-            - docker pull drydock/u14:master
-            - df -h
-            - docker pull drydock/u14all:master
-            - df -h
-            - docker pull drydock/u14javall:master
-            - df -h
-            - docker pull drydock/u14phpall:master
-            - df -h
-            - docker pull drydock/u14scaall:master
-            - df -h
-            - docker pull drydock/u14nodall:master
-            - df -h
-            - docker pull drydock/c7:master
-            - df -h
-            - docker pull drydock/u14all:master
-            - df -h
-            - docker pull drydock/c7all:master
-            - df -h
-            - docker pull drydock/c7javall:master
-            - df -h
-#             - docker pull drydock/c7phpall:master
 #             - df -h
-#             - docker pull drydock/c7scaall:master
+#             - docker images
+#             - cd /opt
+#             - pwd
+#             - docker images
 #             - df -h
-#             - docker pull drydock/c7nodall:master
+#             - docker pull drydock/u16all:master
 #             - df -h
-#             - docker pull drydock/u18node:master
+#             - docker pull drydock/u16javall:master
 #             - df -h
-#             - docker pull drydock/u16node:master
+#             - docker pull drydock/u16phpall:master
 #             - df -h
-#             - docker pull ubuntu
+#             - docker pull drydock/u16scaall:master
 #             - df -h
-          onSuccess:
-            - echo "Job well done!"   
+#             - docker pull drydock/u16nodall:master
+#             - df -h
+#             - docker pull drydock/u14:master
+#             - df -h
+#             - docker pull drydock/u14all:master
+#             - df -h
+#             - docker pull drydock/u14javall:master
+#             - df -h
+#             - docker pull drydock/u14phpall:master
+#             - df -h
+#             - docker pull drydock/u14scaall:master
+#             - df -h
+#             - docker pull drydock/u14nodall:master
+#             - df -h
+#             - docker pull drydock/c7:master
+#             - df -h
+#             - docker pull drydock/u14all:master
+#             - df -h
+#             - docker pull drydock/c7all:master
+#             - df -h
+#             - docker pull drydock/c7javall:master
+#             - df -h
+# #             - docker pull drydock/c7phpall:master
+# #             - df -h
+# #             - docker pull drydock/c7scaall:master
+# #             - df -h
+# #             - docker pull drydock/c7nodall:master
+# #             - df -h
+# #             - docker pull drydock/u18node:master
+# #             - df -h
+# #             - docker pull drydock/u16node:master
+# #             - df -h
+# #             - docker pull ubuntu
+# #             - df -h
+#           onSuccess:
+#             - echo "Job well done!"   
     
     
     
