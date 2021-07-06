@@ -9,7 +9,7 @@ resources:
 
 pipelines:
 
-  - name: vijay_super
+  - name: vijay_pipeline_test
     steps:
       - name: restore_pipelines1
         type: Bash 
