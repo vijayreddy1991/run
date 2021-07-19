@@ -54,8 +54,3 @@ pipelines:
           onExecute:
             - echo "testvariable"
             - printenv            
-
-
-
-
-
