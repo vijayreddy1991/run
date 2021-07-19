@@ -8,7 +8,6 @@ resources:
         include: master
 
 pipelines:
-
   - name: vijay_pipeline_test
     steps:
       - name: restore_pipelines1
