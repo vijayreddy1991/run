@@ -13,7 +13,7 @@ resources:
       key4: value4      
 
 pipelines:
-  - name: vijay_pipeline
+  - name: three_steps_pipeline
     steps:
 
       - name: node_step1
