@@ -34,7 +34,7 @@ pipelines:
             - name: vijayRepo
             - name: mypropertyBag
           inputSteps:
-            - name: node_step1              
+            - name: node_step2              
         execution:
           onExecute:
             - echo "testvariable"
@@ -47,7 +47,7 @@ pipelines:
             - name: vijayRepo
             - name: mypropertyBag
           inputSteps:
-            - name: node_step2              
+            - name: node_step1              
         execution:
           onExecute:
             - echo "testvariable"
