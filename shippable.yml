@@ -16,40 +16,38 @@ pipelines:
   - name: vijay_pipeline
     steps:
 
-      - name: vijay_step1
+      - name: node_step1
         type: Bash
-        configuration: 
-          nodePool: vijay          
+        configuration:         
           inputResources:
             - name: vijayRepo
             - name: mypropertyBag
-
         execution:
           onExecute:
             - echo "testvariable"
             - printenv
 
-      - name: vijay_step2
+      - name: node_step2
         type: Bash
-        configuration: 
-          nodePool: vijay          
+        configuration:         
           inputResources:
             - name: vijayRepo
             - name: mypropertyBag
-
+          inputSteps:
+            - name: node_step1              
         execution:
           onExecute:
             - echo "testvariable"
             - printenv
             
-      - name: vijay_step3
+      - name: node_step3
         type: Bash
-        configuration: 
-          nodePool: vijay          
+        configuration:        
           inputResources:
             - name: vijayRepo
             - name: mypropertyBag
-
+          inputSteps:
+            - name: node_step2              
         execution:
           onExecute:
             - echo "testvariable"
