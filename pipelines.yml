@@ -20,14 +20,5 @@ pipelines:
           onExecute:
             - printenv  
 #             - sleep 120
-#             - printen
-
-
-
-
-
-
-
-
-
+#             - printenv
 
