@@ -14,8 +14,7 @@ pipelines:
           inputResources:
             - name: vijaykumar
 #           runtime:
-#             type: host
-         
+#             type: host        
         execution:
           onExecute:
             - echo "executing step..."
