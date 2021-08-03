@@ -18,7 +18,7 @@ pipelines:
             - name: git_vijaytest         
         execution:
           onExecute:
-            - printenv  
+#             - printenv  
             - curl https://git.jfrog.info
 #             - sleep 120
 #             - printenv
