@@ -69,21 +69,7 @@ pipelines:
 # #             - df -h
 #           onSuccess:
 #             - echo "Job well done!"   
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+      
 #       - name: test
 #         type: Bash
 #         configuration:
