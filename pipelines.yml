@@ -6,7 +6,6 @@ resources:
       path: vijayreddy1991/run
       branches:     
         include: master
-
 pipelines:
   - name: vijay_pipeline_test
     steps:
