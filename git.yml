@@ -19,6 +19,8 @@ pipelines:
             - name: S_PS_R_GIT_0016_GitRepo1
         execution:
           onExecute:
+            - find_resource_variable myRepo $res_S_PS_R_GIT_0016_GitRepo1
+            - get-childitem $res_S_PS_R_GIT_0016_GitRepo1
             - write-output "executing step..."
             - if($res_S_PS_R_GIT_0016_GitRepo1_lastAuthorEmail -eq $null){ Write-Error "Stop" -ErrorAction Stop}
             - if($res_S_PS_R_GIT_0016_GitRepo1_gitProvider_token -eq $null){ Write-Error "Stop" -ErrorAction Stop}
