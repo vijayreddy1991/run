@@ -4,7 +4,6 @@ resources:
     configuration:
       gitProvider: s_gitHub
       path: vijayreddy1991/run
-
 pipelines:
   - name: pipelines_S_PS_R_GIT_00161
     steps:
