@@ -17,7 +17,7 @@ pipelines:
           onExecute:
 #             - find_resource_variable $res_S_PS_R_GIT_0016_GitRepo1
             - get-childitem $res_S_PS_R_GIT_0016_GitRepo1
-            - get-Variable $res_S_PS_R_GIT_0016_GitRepo1
+            - Get-Variable | format-table
             - echo $res_S_PS_R_GIT_0016_GitRepo1_committerLogin
             - write-output "executing step..."
             - if($res_S_PS_R_GIT_0016_GitRepo1_lastAuthorEmail -eq $null){ Write-Error "Stop" -ErrorAction Stop}
