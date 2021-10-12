@@ -137,19 +137,19 @@ pipelines:
           onExecute:
             - printenv     
 
-  - name: pipelines_pullclosetrue
+  - name: pipelines_Pullcreatefalse
     steps:
-      - name: s_BashTriggerclosetrue
+      - name: s_BashTriggercreatefalse
         type: Bash
         configuration:
           environmentVariables:
             env1: value1
             env2: value2
           inputResources:
-            - name: gitpullclosetrue
+            - name: gitpullcreatefalse
         execution:              
           onExecute:
-            - printenv 
+            - printenv  
 
              
          
