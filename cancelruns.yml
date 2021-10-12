@@ -45,7 +45,7 @@ resources:
   - name: gitpullcreatetrue
     type: GitRepo
     configuration:
-      gitProvider: s_git
+      gitProvider: vijay
       path: vijayreddy1991/dummy
       files:  # optional
 #         include: pipelines.sh
@@ -65,7 +65,7 @@ resources:
   - name: gitpullcreatefalse
     type: GitRepo
     configuration:
-      gitProvider: s_git
+      gitProvider: vijay
       path: vijayreddy1991/dummy
       files:  # optional
 #         include: pipelines.sh
