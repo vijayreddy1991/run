@@ -14,7 +14,7 @@ pipelines:
         type: Bash
         configuration: 
           inputResources:          
-            - name: test_1234           
+            - name: test_1         
         execution:
           onExecute:
             - echo "executing step..."
