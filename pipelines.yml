@@ -12,15 +12,13 @@ pipelines:
       - name: restore_pipelines1
         type: Bash 
         configuration: 
-#           nodePool: vijay   
+          nodePool: u18dynamic   
           inputResources:          
             - name: git_vijaytest         
         execution:
           onExecute:
             - printenv  
-#             - curl https://git.jfrog.info
-#             - sleep 120
-#             - printenv
+
 
 
 
