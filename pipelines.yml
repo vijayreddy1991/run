@@ -19,8 +19,3 @@ pipelines:
           onExecute:
             - printenv  
             - grep --version
-
-
-
-
-
