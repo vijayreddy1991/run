@@ -9,7 +9,7 @@ resources:
 pipelines:
   - name: vijay_pipeline_test
     steps:
-      - name: restore_pipelines1
+      - name: pipelines1
         type: Bash 
         configuration: 
           nodePool: u18dynamic   
@@ -17,4 +17,24 @@ pipelines:
             - name: git_vijaytest         
         execution:
           onExecute:
+          
             - printenv  
+      - name: pipelines2
+        type: Bash 
+        configuration: 
+          nodePool: u18dynamic   
+          inputResources:          
+            - name: git_vijaytest         
+        execution:
+          onExecute:
+            - printenv       
+            
+      - name: pipelines3
+        type: Bash 
+        configuration: 
+          nodePool: u18dynamic   
+          inputResources:          
+            - name: git_vijaytest         
+        execution:
+          onExecute:
+            - printenv              
