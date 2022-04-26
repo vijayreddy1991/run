@@ -12,10 +12,9 @@ pipelines:
       - name: restore_pipelines1
         type: Bash 
         configuration: 
-#           nodePool: u18dynamic   
+          nodePool: u18dynamic   
           inputResources:          
             - name: git_vijaytest         
         execution:
           onExecute:
             - printenv  
-            - grep --version
