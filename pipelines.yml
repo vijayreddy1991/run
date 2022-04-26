@@ -24,7 +24,9 @@ pipelines:
         configuration: 
           nodePool: u18dynamic   
           inputResources:          
-            - name: git_vijaytest         
+            - name: git_vijaytest   
+          inputSteps:
+            - name: pipelines1
         execution:
           onExecute:
             - printenv       
