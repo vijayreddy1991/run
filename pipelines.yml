@@ -12,7 +12,7 @@ pipelines:
       - name: pipelines1
         type: Bash 
         configuration: 
-          nodePool: u18dynamic   
+#           nodePool: u18dynamic   
           inputResources:          
             - name: git_vijaytest         
         execution:
@@ -22,7 +22,7 @@ pipelines:
       - name: pipelines2
         type: Bash 
         configuration: 
-          nodePool: u18dynamic   
+#           nodePool: u18dynamic   
           inputResources:          
             - name: git_vijaytest   
           inputSteps:
@@ -34,7 +34,7 @@ pipelines:
       - name: pipelines3
         type: Bash 
         configuration: 
-          nodePool: u18dynamic   
+#           nodePool: u18dynamic   
           inputResources:          
             - name: git_vijaytest         
         execution:
