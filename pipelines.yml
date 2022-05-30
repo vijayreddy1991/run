@@ -26,7 +26,10 @@ pipelines:
             - name: pipelines1
         execution:
           onExecute:
-            - printenv       
+            - printenv  
+            
+            
+            
             
 #       - name: pipelines3
 #         type: Bash 
