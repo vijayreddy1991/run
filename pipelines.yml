@@ -29,7 +29,6 @@ pipelines:
           onExecute:
             - printenv  
             
-            
            
 #       - name: pipelines3
 #         type: Bash 
