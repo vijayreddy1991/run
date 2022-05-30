@@ -28,12 +28,12 @@ pipelines:
           onExecute:
             - printenv       
             
-      - name: pipelines3
-        type: Bash 
-        configuration: 
-#           nodePool: u18dynamic   
-          inputResources:          
-            - name: git_vijaytest         
-        execution:
-          onExecute:
-            - printenv              
+#       - name: pipelines3
+#         type: Bash 
+#         configuration: 
+# #           nodePool: u18dynamic   
+#           inputResources:          
+#             - name: git_vijaytest         
+#         execution:
+#           onExecute:
+#             - printenv              
