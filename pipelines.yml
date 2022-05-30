@@ -31,8 +31,7 @@ pipelines:
             - printenv  
             
             
-            
-            
+           
 #       - name: pipelines3
 #         type: Bash 
 #         configuration: 
