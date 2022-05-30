@@ -21,10 +21,7 @@ pipelines:
             - printenv  
       - name: pipelines2
         type: Bash 
-        configuration: 
-#           nodePool: u18dynamic   
-          inputResources:          
-            - name: git_vijaytest   
+        configuration:  
           inputSteps:
             - name: pipelines1
         execution:
