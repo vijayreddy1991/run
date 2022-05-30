@@ -19,14 +19,14 @@ pipelines:
           onExecute:
           
             - printenv  
-#       - name: pipelines2
-#         type: Bash 
-#         configuration:  
-#           inputSteps:
-#             - name: pipelines1
-#         execution:
-#           onExecute:
-#             - printenv       
+      - name: pipelines2
+        type: Bash 
+        configuration:  
+          inputSteps:
+            - name: pipelines1
+        execution:
+          onExecute:
+            - printenv       
             
 #       - name: pipelines3
 #         type: Bash 
