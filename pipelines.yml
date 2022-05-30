@@ -16,9 +16,8 @@ pipelines:
           inputResources:          
             - name: git_vijaytest         
         execution:
-          onExecute:
-          
-            - printenv  
+          onExecute:         
+             - printenv  
       - name: pipelines2
         type: Bash 
         configuration:  
