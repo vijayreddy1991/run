@@ -24,6 +24,8 @@ pipelines:
         configuration:  
           inputSteps:
             - name: pipelines1
+          inputResources:          
+            - name: git_vijaytest              
         execution:
           onExecute:
             - printenv  
