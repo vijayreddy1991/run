@@ -27,8 +27,7 @@ pipelines:
             - name: git_vijaytest              
         execution:
           onExecute:
-            - printenv  
-            
+            - printenv        
            
 #       - name: pipelines3
 #         type: Bash 
