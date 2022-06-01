@@ -32,6 +32,36 @@ pipelines:
             - echo "testing1"
             - sleep 60
             - echo "testing2"
+      - name: pipelines4
+        type: Bash 
+        configuration:  
+          inputSteps:
+            - name: pipelines2
+          inputResources:          
+            - name: git_vijaytest              
+        execution:
+          onExecute:
+            - printenv     
+            - sleep 60
+            - echo "testing1"
+            - sleep 60
+            - echo "testing2"
+      - name: pipelines5
+        type: Bash 
+        configuration:  
+          inputSteps:
+            - name: pipelines5
+          inputResources:          
+            - name: git_vijaytest              
+        execution:
+          onExecute:
+            - printenv     
+            - sleep 60
+            - echo "testing1"
+            - sleep 60
+            - echo "testing2"
+            
+            
            
       - name: pipelines3
         type: Bash 
