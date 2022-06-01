@@ -50,7 +50,7 @@ pipelines:
         type: Bash 
         configuration:  
           inputSteps:
-            - name: pipelines5
+            - name: pipelines4
           inputResources:          
             - name: git_vijaytest              
         execution:
