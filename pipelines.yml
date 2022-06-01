@@ -27,14 +27,22 @@ pipelines:
             - name: git_vijaytest              
         execution:
           onExecute:
-            - printenv        
+            - printenv     
+            - sleep 60
+            - echo "testing1"
+            - sleep 60
+            - echo "testing2"
            
-#       - name: pipelines3
-#         type: Bash 
-#         configuration: 
-# #           nodePool: u18dynamic   
-#           inputResources:          
-#             - name: git_vijaytest         
-#         execution:
-#           onExecute:
-#             - printenv              
+      - name: pipelines3
+        type: Bash 
+        configuration: 
+          runtime:
+            type: host        
+#           nodePool: u18dynamic   
+          inputResources:          
+            - name: git_vijaytest         
+        execution:
+          onExecute:
+            - printenv       
+            - sleep 60
+            - echo "test1"
