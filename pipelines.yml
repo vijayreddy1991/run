@@ -7,9 +7,9 @@ resources:
       branches:     
         include: master
 pipelines:
-  - name: vijay_pipeline_test
+  - name: vijay_pipeline_ubuntu
     steps:
-      - name: pipelines1
+      - name: pipelines_ubuntu
         type: Bash 
         configuration: 
 #           nodePool: u18dynamic   
@@ -18,61 +18,20 @@ pipelines:
         execution:
           onExecute:         
              - printenv  
-      - name: pipelines2
-        type: Bash 
-        configuration:  
-          inputSteps:
-            - name: pipelines1
-          inputResources:          
-            - name: git_vijaytest              
-        execution:
-          onExecute:
-            - printenv     
-            - sleep 60
-            - echo "testing1"
-            - sleep 60
-            - echo "testing2"
-      - name: pipelines4
-        type: Bash 
-        configuration:  
-          inputSteps:
-            - name: pipelines2
-          inputResources:          
-            - name: git_vijaytest              
-        execution:
-          onExecute:
-            - printenv     
-            - sleep 60
-            - echo "testing1"
-            - sleep 60
-            - echo "testing2"
-      - name: pipelines5
-        type: Bash 
-        configuration:  
-          inputSteps:
-            - name: pipelines4
-          inputResources:          
-            - name: git_vijaytest              
-        execution:
-          onExecute:
-            - printenv     
-            - sleep 60
-            - echo "testing1"
-            - sleep 60
-            - echo "testing2"
+
             
             
-           
-      - name: pipelines3
+  - name: vijay_pipeline_windows
+    steps:           
+      - name: pipelines_windows
         type: Bash 
         configuration: 
           runtime:
             type: host        
-#           nodePool: u18dynamic   
+          nodePool: win_2019  
           inputResources:          
             - name: git_vijaytest         
         execution:
           onExecute:
             - printenv       
-            - sleep 60
             - echo "test1"
