@@ -24,7 +24,7 @@ pipelines:
   - name: vijay_pipeline_windows
     steps:           
       - name: pipelines_windows
-        type: Bash 
+        type: powershell
         configuration: 
           runtime:
             type: host        
