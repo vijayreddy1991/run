@@ -21,17 +21,17 @@ pipelines:
 
             
             
-#   - name: vijay_pipeline_windows
-#     steps:           
-#       - name: pipelines_windows
-#         type: Bash 
-#         configuration: 
-#           runtime:
-#             type: host        
-#           nodePool: win_2019  
-#           inputResources:          
-#             - name: git_vijaytest         
-#         execution:
-#           onExecute:
-#             - printenv       
-#             - echo "test1"
+  - name: vijay_pipeline_windows
+    steps:           
+      - name: pipelines_windows
+        type: Bash 
+        configuration: 
+          runtime:
+            type: host        
+          nodePool: win_2019  
+          inputResources:          
+            - name: git_vijaytest         
+        execution:
+          onExecute:
+            - printenv       
+            - echo "test1"
