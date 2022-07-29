@@ -16,22 +16,6 @@ pipelines:
           inputResources:          
             - name: git_vijaytest         
         execution:
-          onExecute:         
+          onExecute: 
+             - node --version 
              - printenv  
-
-            
-            
-  - name: vijay_pipeline_windows
-    steps:           
-      - name: pipelines_windows
-        type: powershell
-        configuration: 
-          runtime:
-            type: host        
-          nodePool: win_2019  
-          inputResources:          
-            - name: git_vijaytest         
-        execution:
-          onExecute:
-            - printenv       
-            - echo "test1"
