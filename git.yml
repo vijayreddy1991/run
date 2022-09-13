@@ -10,7 +10,6 @@ pipelines:
       - name: S_PS_R_GIT_0016
         type: bash
         configuration:
-          nodePool: u18dynamic
           inputResources:
             - name: S_PS_R_GIT_0016_GitRepo1
         execution:
