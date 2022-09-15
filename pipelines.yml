@@ -3,9 +3,7 @@ pipelines:
   - name: vijay_pipeline
     steps:
       - name: pipelines_ubuntu
-        type: Bash 
-        configuration: 
-#           nodePool: u18dynamic        
+        type: Bash         
         execution:
           onExecute: 
              - node --version 
