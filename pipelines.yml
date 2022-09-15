@@ -1,6 +1,6 @@
 
 pipelines:
-  - name: vijay_pipeline_ubuntu
+  - name: vijay_pipeline
     steps:
       - name: pipelines_ubuntu
         type: Bash 
