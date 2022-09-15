@@ -1,20 +1,11 @@
-resources:
-  - name: git_vijaytest
-    type: GitRepo
-    configuration:
-      gitProvider: vijay
-      path: vijayreddy1991/run
-      branches:     
-        include: master
+
 pipelines:
   - name: vijay_pipeline_ubuntu
     steps:
       - name: pipelines_ubuntu
         type: Bash 
         configuration: 
-#           nodePool: u18dynamic   
-          inputResources:          
-            - name: git_vijaytest         
+#           nodePool: u18dynamic        
         execution:
           onExecute: 
              - node --version 
