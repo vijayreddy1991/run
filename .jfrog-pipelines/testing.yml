@@ -14,9 +14,7 @@ pipelines:
         type: Bash
         configuration: 
           inputResources:          
-            - name: git_vijay    
-          integrations:
-            - name: k8s            
+            - name: git_vijay               
         execution:
           onExecute:
             - echo "executing step..."
