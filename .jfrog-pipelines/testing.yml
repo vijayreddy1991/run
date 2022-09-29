@@ -1,0 +1,24 @@
+resources:    
+  - name: git_vijay
+    type: GitRepo
+    configuration:
+      gitProvider: vijay
+      path: vijayreddy1991/run
+      branches:     
+        include: master    
+
+pipelines:
+  - name: pipelines_vijay
+    steps:
+      - name: S_Bash1
+        type: Bash
+        configuration: 
+          inputResources:          
+            - name: git_vijay    
+          integrations:
+            - name: k8s            
+        execution:
+          onExecute:
+            - echo "executing step..."
+            - kubectl version
+            
