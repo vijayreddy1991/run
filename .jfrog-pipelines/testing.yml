@@ -27,4 +27,11 @@ pipelines:
             - sudo apt-get update
             - sudo apt-get install -y kubectl
             - kubectl config get-contexts
+            - kubectl get ns
+            - kubectl create ns testing
+            - helm repo add jfrog https://charts.jfrog.io
+            - helm repo update
+            - helm search repo artifactory
+            - helm upgrade --install rt jfrog/artifactory -n testing
+            
             
