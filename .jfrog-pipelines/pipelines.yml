@@ -19,3 +19,5 @@ pipelines:
           onExecute: 
              - node --version 
              - printenv  
+             
+             
