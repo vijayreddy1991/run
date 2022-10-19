@@ -23,7 +23,7 @@ pipelines:
                 - error
         execution:
           onFailure:
-            - echo cheppura
+            - printenv
           onExecute: 
              - node --version
              - |
@@ -47,6 +47,7 @@ pipelines:
         execution:
           onFailure:
             - echo cheppura
+            - add_run_variables "foobar=$run_id"
           onExecute: 
              - node --version 
              # - if commit sha is 000000 then do something; else do something else
