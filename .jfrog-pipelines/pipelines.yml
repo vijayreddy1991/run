@@ -27,7 +27,7 @@ pipelines:
           onExecute: 
              - node --version
              - |
-              curl -H "Authorization: apiToken $builder_api_token" "https://repo21dev-pipelines-api.jfrogdev.org/v1/runResourceVersions?runIds=$run_id" | jq .[0]
+              curl -H "Authorization: apiToken $builder_api_token" "https://repo21dev-pipelines-api.jfrogdev.org/v1/runResourceVersions?runIds=$run_id" | jq '.[0]'
              # - if commit sha is 000000 then do something; else do something else
              - |
               if [ "$res_test_1234_commitSha" == "0000000000000000000000000000000000000000"]; then
