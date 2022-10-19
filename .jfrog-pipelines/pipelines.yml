@@ -20,6 +20,8 @@ pipelines:
           inputResources:          
             - name: test_1234           
         execution:
+          onFaiure:
+            - echo cheppura
           onExecute: 
              - node --version 
              - printenv
