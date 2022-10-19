@@ -1,10 +1,20 @@
-
+resources:
+  - name: test_1234
+    type: GitRepo
+    configuration:
+      gitProvider: vijay
+      path: vijayreddy1991/runtime
+      branches:     
+        include: ^(bugfix|feature)\/.*$
 
 pipelines:
   - name: vijay_pipeline_ubuntu
     steps:
       - name: pipelines_ubuntu
-        type: Bash        
+        type: Bash
+        configuration: 
+          inputResources:          
+            - name: test_1234        
         execution:
           onExecute: 
              - node --version 
