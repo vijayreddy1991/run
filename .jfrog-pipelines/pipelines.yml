@@ -44,7 +44,7 @@ pipelines:
           inputResources:          
             - name: test_1234           
         execution:
-          onFaiure:
+          onFailure:
             - echo cheppura
           onExecute: 
              - node --version 
