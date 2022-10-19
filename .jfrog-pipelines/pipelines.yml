@@ -10,6 +10,30 @@ resources:
 pipelines:
   - name: vijay_pipeline_ubuntu
     steps:
+      - name: run_on_error
+        type: Bash
+        configuration: 
+          environmentVariables:
+            RT_VERSION: 7.46.3
+            MASTER_KEY: "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
+            JOIN_KEY: "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"         
+          inputSteps:          
+            - name: pipelines_ubuntu
+              status:
+                - error
+        execution:
+          onFaiure:
+            - echo cheppura
+          onExecute: 
+             - node --version 
+             - printenv
+             # - if commit sha is 000000 then do something; else do something else
+             - |
+              if [ "$res_test_1234_commitSha" == "0000000000000000000000000000000000000000"]; then
+                echo foo
+              else
+                echo bar
+              fi
       - name: pipelines_ubuntu
         type: Bash
         configuration: 
@@ -32,3 +56,4 @@ pipelines:
               else
                 echo bar
               fi
+           
