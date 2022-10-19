@@ -22,7 +22,6 @@ pipelines:
               status:
                 - error
         execution:
-          onFailure:
           onExecute: 
              - node --version
              - |
