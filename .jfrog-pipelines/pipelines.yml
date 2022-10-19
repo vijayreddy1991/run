@@ -22,7 +22,7 @@ pipelines:
               status:
                 - error
         execution:
-          onFaiure:
+          onFailure:
             - echo cheppura
           onExecute: 
              - node --version 
