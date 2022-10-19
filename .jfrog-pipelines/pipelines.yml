@@ -45,6 +45,7 @@ pipelines:
           onFailure:
             - echo cheppura
             - add_run_variables "sha=$res_test_1234_commitSha"
+            - printenv
           onExecute: 
              - node --version 
              # - if commit sha is 000000 then do something; else do something else
