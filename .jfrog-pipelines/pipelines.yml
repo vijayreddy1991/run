@@ -27,7 +27,7 @@ pipelines:
              # - if commit sha is 000000 then do something; else do something else
              - echo $sha
              - |
-              if [ "$sha" == "0000000000000000000000000000000000000000"]; then
+              if [ "$sha" == "0000000000000000000000000000000000000000" ]; then
                 echo foo
               else
                 echo bar
@@ -50,7 +50,7 @@ pipelines:
              - node --version 
              # - if commit sha is 000000 then do something; else do something else
              - |
-              if [ "$res_test_1234_commitSha" == "0000000000000000000000000000000000000000"]; then
+              if [ "$res_test_1234_commitSha" == "0000000000000000000000000000000000000000" ]; then
                 echo foo
               else
                 echo bar
