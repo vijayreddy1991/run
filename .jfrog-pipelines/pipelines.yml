@@ -13,12 +13,12 @@ pipelines:
       - name: pipelines_ubuntu
         type: Bash
         configuration: 
+          environmentVariables:
+            RT_VERSION: 7.46.3
+            MASTER_KEY: "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
+            JOIN_KEY: "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"         
           inputResources:          
-            - name: test_1234  
-        environmentVariables:
-          RT_VERSION: 7.46.3
-          MASTER_KEY: "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
-          JOIN_KEY: "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"          
+            - name: test_1234           
         execution:
           onExecute: 
              - node --version 
