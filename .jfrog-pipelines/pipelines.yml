@@ -23,14 +23,11 @@ pipelines:
                 - error
         execution:
           onExecute: 
-             - node --version
-             # - if commit sha is 000000 then do something; else do something else
-             - echo $sha
              - |
-              if [ "$sha" == "0000000000000000000000000000000000000000" ]; then
-                echo foo
+              if [ "$is_branch_deleted" == "true" ]; then
+                echo $deleted_branch
               else
-                echo bar
+                exit 1
               fi
       - name: pipelines_ubuntu
         type: Bash
@@ -43,16 +40,7 @@ pipelines:
             - name: test_1234           
         execution:
           onFailure:
-            - echo cheppura
-            - add_run_variables "sha=$res_test_1234_commitSha"
-            - printenv
+            - add_run_variables "is_branch_deleted=$res_test_1234_isBranchDelete"
+            - add_run_variables "deleted_branch=$res_test_1234_branchName"
           onExecute: 
-             - node --version 
-             # - if commit sha is 000000 then do something; else do something else
-             - |
-              if [ "$res_test_1234_commitSha" == "0000000000000000000000000000000000000000" ]; then
-                echo foo
-              else
-                echo bar
-              fi
-           
+             - echo hi
