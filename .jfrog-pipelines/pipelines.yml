@@ -30,5 +30,3 @@ pipelines:
               else
                 echo bar
               fi
-             
-             
