@@ -14,7 +14,11 @@ pipelines:
         type: Bash
         configuration: 
           inputResources:          
-            - name: test_1234        
+            - name: test_1234  
+        environmentVariables:
+          RT_VERSION: 7.46.3
+          MASTER_KEY: "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
+          JOIN_KEY: "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"          
         execution:
           onExecute: 
              - node --version 
