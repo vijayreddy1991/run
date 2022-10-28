@@ -14,8 +14,7 @@ pipelines:
     steps:
       - name: run_on_error
         type: Bash
-        configuration: 
-          environmentVariables:       
+        configuration:    
           inputSteps:          
             - name: pipelines_ubuntu
 #               status:
