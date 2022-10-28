@@ -22,7 +22,6 @@ pipelines:
         execution:
           onExecute: 
              - echo "testing"
-             - sleep 120
 #              - |
 #               if [ "$is_branch_deleted" == "true" ]; then
 #                 echo $deleted_branch
