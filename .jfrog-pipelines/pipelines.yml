@@ -15,34 +15,28 @@ pipelines:
       - name: run_on_error
         type: Bash
         configuration: 
-          environmentVariables:
-            RT_VERSION: 7.46.3
-            MASTER_KEY: "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
-            JOIN_KEY: "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"         
+          environmentVariables:       
           inputSteps:          
             - name: pipelines_ubuntu
-              status:
-                - error
+#               status:
+#                 - error
         execution:
           onExecute: 
-             - |
-              if [ "$is_branch_deleted" == "true" ]; then
-                echo $deleted_branch
-              else
-                exit 1
-              fi
+             - echo "testing"
+#              - |
+#               if [ "$is_branch_deleted" == "true" ]; then
+#                 echo $deleted_branch
+#               else
+#                 exit 1
+#               fi
       - name: pipelines_ubuntu
         type: Bash
-        configuration: 
-          environmentVariables:
-            RT_VERSION: 7.46.3
-            MASTER_KEY: "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
-            JOIN_KEY: "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"         
+        configuration:        
           inputResources:          
             - name: test_1234           
         execution:
-          onFailure:
-            - add_run_variables "is_branch_deleted=$res_test_1234_isBranchDelete"
-            - add_run_variables "deleted_branch=$res_test_1234_branchName"
+#           onFailure:
+#             - add_run_variables "is_branch_deleted=$res_test_1234_isBranchDelete"
+#             - add_run_variables "deleted_branch=$res_test_1234_branchName"
           onExecute: 
              - echo hi
