@@ -20,13 +20,13 @@ pipelines:
                 name: f0001.jfrog-pipelines.com/jfrog/pipelines
                 tag: "v1.0.0"
                 sourceRepository: jfrog
-                registry: registry        
+                registry: vijay_art       
           inputResources:          
             - name: git_vijay               
         execution:
           onExecute:
             - echo "executing step..."
-            
+            - docker images
 #             - kubectl version
 #             - sudo apt-get update
 #             - sudo apt-get install -y ca-certificates curl
