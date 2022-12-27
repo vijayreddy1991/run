@@ -13,25 +13,34 @@ pipelines:
       - name: S_Bash1
         type: Bash
         configuration: 
+          runtime:
+            type: image
+            image:
+              custom:
+                name: f0001.jfrog-pipelines.com/jfrog/pipelines
+                tag: "v1.0.0"
+                sourceRepository: jfrog
+                registry: registry        
           inputResources:          
             - name: git_vijay               
         execution:
           onExecute:
             - echo "executing step..."
-            - kubectl version
-            - sudo apt-get update
-            - sudo apt-get install -y ca-certificates curl
-            - sudo apt-get install -y apt-transport-https
-            - sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
-            - echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
-            - sudo apt-get update
-            - sudo apt-get install -y kubectl
-            - kubectl config get-contexts
-            - kubectl get ns
-            - kubectl create ns testing
-            - helm repo add jfrog https://charts.jfrog.io
-            - helm repo update
-            - helm search repo artifactory
-            - helm upgrade --install rt jfrog/artifactory -n testing
+            
+#             - kubectl version
+#             - sudo apt-get update
+#             - sudo apt-get install -y ca-certificates curl
+#             - sudo apt-get install -y apt-transport-https
+#             - sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+#             - echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+#             - sudo apt-get update
+#             - sudo apt-get install -y kubectl
+#             - kubectl config get-contexts
+#             - kubectl get ns
+#             - kubectl create ns testing
+#             - helm repo add jfrog https://charts.jfrog.io
+#             - helm repo update
+#             - helm search repo artifactory
+#             - helm upgrade --install rt jfrog/artifactory -n testing
             
             
