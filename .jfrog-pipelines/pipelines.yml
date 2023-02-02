@@ -14,7 +14,7 @@ pipelines:
     steps:
       - name: run
         type: Bash
-        configuration:    
+#         configuration:    
 #           inputSteps:          
 #             - name: pipelines_ubuntu
 # #               status:
