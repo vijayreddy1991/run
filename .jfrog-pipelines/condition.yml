@@ -4,7 +4,7 @@ resources:
     configuration:
       gitProvider: vijay
       path: vijayreddy1991/run
-  - name: propertyBag_1
+  - name: propertyBag_vijay
     type: PropertyBag
     configuration:
       property1: "jfrog"
@@ -29,7 +29,7 @@ pipelines:
           inputResources:
             - name: test_12345
           outputResources:
-            - name: propertyBag_1
+            - name: propertyBag_vijay
         execution:
           onExecute:
             - write_output propertyBag "foo=$run_number" 
