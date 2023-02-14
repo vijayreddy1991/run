@@ -1,3 +1,10 @@
+resources:
+  - name: test_1234
+    type: GitRepo
+    configuration:
+      gitProvider: vijay
+      path: vijayreddy1991/run
+
 pipelines:
   - name: event_service_e2e
     configuration:
@@ -11,6 +18,13 @@ pipelines:
 
     steps:
       - name: event_local_e2e
-        type: MvnBuild
+        type: Bash
         configuration:
           condition: "${RUN_LOCAL_TEST_SUIT} == 'true'"
+          inputResources:
+            - name: test_1234
+          outputResources:
+            - name: propertyBag
+        execution:
+          onExecute:
+            - write_output propertyBag "foo=$run_number" 
