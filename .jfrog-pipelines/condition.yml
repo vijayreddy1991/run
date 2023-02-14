@@ -25,7 +25,7 @@ pipelines:
       - name: event_local_e2e
         type: Bash
         configuration:
-          condition: '${RUN_LOCAL_TEST_SUIT} == 'true''
+          condition: '${RUN_LOCAL_TEST_SUIT} == "true"'
           inputResources:
             - name: test_12345
           outputResources:
