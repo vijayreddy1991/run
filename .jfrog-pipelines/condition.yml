@@ -32,4 +32,4 @@ pipelines:
             - name: propertyBag_vijay
         execution:
           onExecute:
-            - write_output propertyBag_vijay "$property1=$run_number" 
+            - write_output propertyBag_vijay "vijay=$run_number" 
