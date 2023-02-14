@@ -1,9 +1,14 @@
 resources:
-  - name: test_1234
+  - name: test_12345
     type: GitRepo
     configuration:
       gitProvider: vijay
       path: vijayreddy1991/run
+  - name: propertyBag_1
+    type: PropertyBag
+    configuration:
+      property1: "jfrog"
+      property2: "pipelines"      
 
 pipelines:
   - name: event_service_e2e
@@ -22,9 +27,9 @@ pipelines:
         configuration:
           condition: "${RUN_LOCAL_TEST_SUIT} == 'true'"
           inputResources:
-            - name: test_1234
+            - name: test_12345
           outputResources:
-            - name: propertyBag
+            - name: propertyBag_1
         execution:
           onExecute:
             - write_output propertyBag "foo=$run_number" 
