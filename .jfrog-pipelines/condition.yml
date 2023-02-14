@@ -1,0 +1,16 @@
+pipelines:
+  - name: event_service_e2e
+    configuration:
+      environmentVariables:
+        readOnly:
+          RUN_LOCAL_TEST_SUIT:
+            default: 'false'
+            values:
+              - 'true'
+              - 'false'
+
+    steps:
+      - name: event_local_e2e
+        type: MvnBuild
+        configuration:
+          condition: "${RUN_LOCAL_TEST_SUIT} == 'true'"
