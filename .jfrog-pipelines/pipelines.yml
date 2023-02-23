@@ -22,6 +22,7 @@ pipelines:
         execution:
           onExecute: 
              - echo "testing"
+             - jfrog --version
 #              - |
 #               if [ "$is_branch_deleted" == "true" ]; then
 #                 echo $deleted_branch
