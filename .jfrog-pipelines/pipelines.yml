@@ -3,40 +3,22 @@ resources:
     type: GitRepo
     configuration:
       gitProvider: vijay
-      path: vijayreddy1991/run
-#       branches:     
-#         include: ^(bugfix|feature)\/.*$
-#       buildOn:
-#          commit: false        
+      path: vijayreddy1991/run       
 
 pipelines:
   - name: vijay_pipeline_ubuntu
     steps:
       - name: run
         type: Bash
-#         configuration:    
-#           inputSteps:          
-#             - name: pipelines_ubuntu
-# #               status:
-# #                 - error
+        configuration:    
+          runtime:
+            type: host
         execution:
           onExecute: 
              - echo "testing"
-             - jfrog --version
-#              - |
-#               if [ "$is_branch_deleted" == "true" ]; then
-#                 echo $deleted_branch
-#               else
-#                 exit 1
-#               fi
-#       - name: pipelines_ubuntu
-#         type: Bash
-#         configuration:        
-#           inputResources:          
-#             - name: test_1234           
-#         execution:
-#           onFailure:
-#             - add_run_variables "is_branch_deleted=$res_test_1234_isBranchDelete"
-#             - add_run_variables "deleted_branch=$res_test_1234_branchName"
-#           onExecute: 
-#              - echo hi
+             - pushd $res_test_1234_resourcePath
+             - cd /opt/jfrog/pipelines
+             - ls -la
+             - cd time
+             - cat start.txt
+             - cat build.txt
