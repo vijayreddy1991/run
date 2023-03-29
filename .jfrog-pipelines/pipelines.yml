@@ -16,7 +16,7 @@ pipelines:
         execution:
           onExecute: 
              - echo "testing"
-             - pushd $res_test_1234_resourcePath
+             - ls -la
              - cd /opt/jfrog/pipelines
              - ls -la
              - cd time
