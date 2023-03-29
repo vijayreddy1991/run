@@ -26,4 +26,4 @@ pipelines:
              - ls -la
 #              - cat download.txt
              - cat start.txt
-             - cat build.txt
+             - cat logs.txt
