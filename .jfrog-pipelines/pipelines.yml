@@ -13,10 +13,13 @@ pipelines:
         configuration:    
           runtime:
             type: host
+          inputResources:
+            - name: test_1234
         execution:
           onExecute: 
              - echo "testing"
              - ls -la
+             - pushd $res_test_1234_resourcePath
              - cd /opt/jfrog/pipelines
              - ls -la
              - cd time
