@@ -20,7 +20,7 @@ pipelines:
              - echo "testing"
              - ls -la
              - pushd $res_test_1234_resourcePath
-             - cd opt/jfrog/pipelines
+             - cd /var/opt/jfrog/pipelines
              - ls -la
              - cd time
              - cat start.txt
