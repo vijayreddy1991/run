@@ -19,30 +19,33 @@ pipelines:
           onExecute: 
              - echo "testing"
              - ls -la
-             - pushd $res_test_1234_resourcePath
-             - cd /var/opt/jfrog/pipelines
-             - ls -la
-             - cd time
-             - ls -la
-#              - cat download.txt
-             - cat start.txt
-             - cat logs.txt
-             - cat startlogs.txt
-      - name: powershell
-        type: PowerShell
-        configuration:
-          nodePool: win_2019
-          runtime:
-            type: host
-          inputResources:
-            - name: test_1234
-        execution:
-          onExecute: 
-             - echo "testing"
-             - ls -la
-             - pushd $res_test_1234_resourcePath
-             - cd /var/opt/jfrog/pipelines
-             - ls -la
-             - cat time.txt
+             - docker --version
+             - containerd --version
+             
+#              - pushd $res_test_1234_resourcePath
+#              - cd /var/opt/jfrog/pipelines
+#              - ls -la
+#              - cd time
+#              - ls -la
+# #              - cat download.txt
+#              - cat start.txt
 #              - cat logs.txt
-#              - cat startlogs.txt             
+#              - cat startlogs.txt
+#       - name: powershell
+#         type: PowerShell
+#         configuration:
+#           nodePool: win_2019
+#           runtime:
+#             type: host
+#           inputResources:
+#             - name: test_1234
+#         execution:
+#           onExecute: 
+#              - echo "testing"
+#              - ls -la
+#              - pushd $res_test_1234_resourcePath
+#              - cd /var/opt/jfrog/pipelines
+#              - ls -la
+#              - cat time.txt
+# #              - cat logs.txt
+# #              - cat startlogs.txt             
