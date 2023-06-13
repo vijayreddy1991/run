@@ -6,7 +6,7 @@ resources:
       path: vijayreddy1991/run       
 
 pipelines:
-  - name: vijay_pipeline_ubuntu
+  - name: test_gcp_nodepool
     steps:
       - name: run
         type: Bash
