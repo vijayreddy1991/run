@@ -21,7 +21,6 @@ pipelines:
              - ls -la
              - docker images
              - docker --version
-             - containerd --version
              
 #              - pushd $res_test_1234_resourcePath
 #              - cd /var/opt/jfrog/pipelines
