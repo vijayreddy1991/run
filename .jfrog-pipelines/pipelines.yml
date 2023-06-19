@@ -11,8 +11,8 @@ pipelines:
       - name: run
         type: Bash
         configuration:    
-#           runtime:
-#             type: host
+          runtime:
+            type: host
           inputResources:
             - name: test_1234
         execution:
