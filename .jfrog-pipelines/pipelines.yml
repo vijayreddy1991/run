@@ -23,7 +23,7 @@ pipelines:
              - docker --version
              - node --version
              - npm --version
-             - npm list kind-of
+             - npm list -g kind-of
              - npm list -g json5
              - npm list -g elliptic
              
