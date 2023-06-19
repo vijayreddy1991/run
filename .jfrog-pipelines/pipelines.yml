@@ -27,7 +27,6 @@ pipelines:
              - npm list -g json5
              - npm list -g elliptic
              
-             
 #              - pushd $res_test_1234_resourcePath
 #              - cd /var/opt/jfrog/pipelines
 #              - ls -la
