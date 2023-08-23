@@ -14,8 +14,8 @@ pipelines:
       - name: run
         type: Bash
         configuration:    
-          runtime:
-            type: image
+          # runtime:
+          #   type: image
           inputResources:
             - name: test_1234
         execution:
