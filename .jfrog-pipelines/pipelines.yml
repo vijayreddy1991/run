@@ -8,14 +8,14 @@ resources:
 pipelines:
   - name: test_gcp_nodepool
     configuration:  
-      runtime:
-        type: host
+      # runtime:
+      #   type: host
     steps:
       - name: run
         type: Bash
         configuration:    
-          # runtime:
-          #   type: image
+          runtime:
+            type: host
           inputResources:
             - name: test_1234
         execution:
