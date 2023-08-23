@@ -18,7 +18,8 @@ pipelines:
         execution:
           onExecute: 
              - echo "testing"
-             - ls -la
+             - uname -m
+             - lscpu
              - docker images
              - docker --version
              - node --version
