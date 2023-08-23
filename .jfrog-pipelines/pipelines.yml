@@ -15,11 +15,7 @@ pipelines:
         type: Bash
         configuration:    
           runtime:
-            type: host
-            # image:
-            #   auto:
-            #     language: u20node-arm
-            #     version: "18" # Either "version" or "versions" can be used.
+            type: image
           inputResources:
             - name: test_1234
         execution:
