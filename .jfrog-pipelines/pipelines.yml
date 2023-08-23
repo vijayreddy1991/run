@@ -9,17 +9,17 @@ pipelines:
   - name: test_gcp_nodepool
     configuration:  
       # runtime:
-      #   type: host 
+      #   type: host
     steps:
       - name: run
         type: Bash
         configuration:    
           runtime:
-            type: image
-            image:
-              auto:
-                language: u20node-arm
-                version: "18" # Either "version" or "versions" can be used.
+            type: host
+            # image:
+            #   auto:
+            #     language: u20node-arm
+            #     version: "18" # Either "version" or "versions" can be used.
           inputResources:
             - name: test_1234
         execution:
