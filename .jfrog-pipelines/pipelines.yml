@@ -13,7 +13,9 @@ pipelines:
     steps:
       - name: run
         type: Bash
-        configuration:    
+        configuration:  
+          runtime:
+            type: host        
           inputResources:
             - name: test_1234
         execution:
