@@ -26,7 +26,7 @@ pipelines:
           runtime:
             type: host        
           inputResources:
-            - name: test_1234
+            - name: exclude
         execution:
           onExecute: 
              - echo "testing"
