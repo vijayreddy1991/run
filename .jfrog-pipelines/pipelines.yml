@@ -1,17 +1,26 @@
 resources:
-  - name: test_1234
+  - name: exclude
     type: GitRepo
     configuration:
       gitProvider: vijay
       path: vijayreddy1991/run       
-
+      files:
+        exclude: test.yaml
+        
+  - name: include
+    type: GitRepo
+    configuration:
+      gitProvider: vijay
+      path: vijayreddy1991/run       
+      files:
+        include: test.yaml
 pipelines:
   - name: test_gcp_nodepool
     configuration:  
       runtime:
         type: host
     steps:
-      - name: run
+      - name: exclude_step
         type: Bash
         configuration:  
           runtime:
@@ -21,8 +30,6 @@ pipelines:
         execution:
           onExecute: 
              - echo "testing"
-             - uname -m
-             - lscpu
              - docker images
              # - docker --version
              # - node --version
@@ -30,31 +37,16 @@ pipelines:
              # - npm list -g kind-of
              # - npm list -g json5
              # - npm list -g elliptic
-             
-#              - pushd $res_test_1234_resourcePath
-#              - cd /var/opt/jfrog/pipelines
-#              - ls -la
-#              - cd time
-#              - ls -la
-# #              - cat download.txt
-#              - cat start.txt
+      - name: include_step
+        type: Bash
+        configuration:
+          # nodePool: win_2019
+          # runtime:
+          #   type: host
+          inputResources:
+            - name: include
+        execution:
+          onExecute: 
+             - echo "testing"
 #              - cat logs.txt
-#              - cat startlogs.txt
-#       - name: powershell
-#         type: PowerShell
-#         configuration:
-#           nodePool: win_2019
-#           runtime:
-#             type: host
-#           inputResources:
-#             - name: test_1234
-#         execution:
-#           onExecute: 
-#              - echo "testing"
-#              - ls -la
-#              - pushd $res_test_1234_resourcePath
-#              - cd /var/opt/jfrog/pipelines
-#              - ls -la
-#              - cat time.txt
-# #              - cat logs.txt
-# #              - cat startlogs.txt             
+#              - cat startlogs.txt             
