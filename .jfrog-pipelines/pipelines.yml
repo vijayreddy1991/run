@@ -45,6 +45,8 @@ pipelines:
           #   type: host
           inputResources:
             - name: include
+          inputSteps:
+            - name: exclude_step
         execution:
           onExecute: 
              - echo "testing"
