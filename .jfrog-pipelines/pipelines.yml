@@ -24,13 +24,15 @@ pipelines:
         type: Bash
         configuration:  
           runtime:
-            type: host        
+            type: host
+          integrations:
+            - name: int_aws
           inputResources:
             - name: exclude
         execution:
           onExecute: 
              - echo "testing"
-             - docker images
+             - printenv
              # - docker --version
              # - node --version
              # - npm --version
