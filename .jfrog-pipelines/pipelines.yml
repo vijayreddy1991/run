@@ -33,6 +33,7 @@ pipelines:
           onExecute: 
              - echo "testing"
              - printenv
+             - uname -m 
              # - docker --version
              # - node --version
              # - npm --version
@@ -52,5 +53,7 @@ pipelines:
         execution:
           onExecute: 
              - echo "testing"
+             - docker images
+             - node --version
 #              - cat logs.txt
 #              - cat startlogs.txt             
