@@ -42,8 +42,8 @@ pipelines:
         type: Bash
         configuration:
           # nodePool: win_2019
-          # runtime:
-          #   type: host
+          runtime:
+            type: image
           inputResources:
             - name: include
           inputSteps:
