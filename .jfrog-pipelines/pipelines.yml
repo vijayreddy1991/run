@@ -20,7 +20,7 @@ pipelines:
       runtime:
         type: host
     steps:
-      - name: exclude_step
+      - name: host_machine_step
         type: Bash
         configuration:  
           runtime:
@@ -38,7 +38,7 @@ pipelines:
              # - npm list -g kind-of
              # - npm list -g json5
              # - npm list -g elliptic
-      - name: include_step
+      - name: Docker_step
         type: Bash
         configuration:
           # nodePool: win_2019
@@ -53,5 +53,9 @@ pipelines:
              - echo "testing"
              - docker images
              - node --version
+             - java --version
+             - dotnet --version
+             - go version
+             - clang --version
 #              - cat logs.txt
 #              - cat startlogs.txt             
