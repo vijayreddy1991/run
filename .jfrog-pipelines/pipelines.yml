@@ -56,5 +56,6 @@ pipelines:
              - dotnet --version
              - go version
              - clang --version
+             - java -version
 #              - cat logs.txt
 #              - cat startlogs.txt             
