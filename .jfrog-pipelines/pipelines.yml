@@ -53,7 +53,6 @@ pipelines:
              - echo "testing"
              - docker images
              - node --version
-             - clang --version
              - java -version
 #              - cat logs.txt
 #              - cat startlogs.txt             
