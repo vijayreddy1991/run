@@ -53,9 +53,9 @@ pipelines:
              - echo "testing"
              - docker images
              - node --version
-             - dotnet --version
              - go version
              - clang --version
+             - dotnet -version
              - java -version
 #              - cat logs.txt
 #              - cat startlogs.txt             
