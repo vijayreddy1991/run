@@ -53,7 +53,7 @@ pipelines:
              - echo "testing"
              - docker images
              - node --version
-             - java --version
+             - java version
              - dotnet --version
              - go version
              - clang --version
