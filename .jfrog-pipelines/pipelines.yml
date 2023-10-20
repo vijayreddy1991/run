@@ -47,7 +47,7 @@ pipelines:
           inputResources:
             - name: include
           inputSteps:
-            - name: exclude_step
+            - name: host_machine_step
         execution:
           onExecute: 
              - echo "testing"
