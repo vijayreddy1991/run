@@ -30,7 +30,6 @@ pipelines:
         execution:
           onExecute: 
              - echo "testing"
-             - printenv
              - uname -m 
              # - docker --version
              # - node --version
