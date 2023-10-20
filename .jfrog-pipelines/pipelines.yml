@@ -52,7 +52,5 @@ pipelines:
           onExecute: 
              - echo "testing"
              - docker images
-             - node --version
-             - java -version
 #              - cat logs.txt
 #              - cat startlogs.txt             
