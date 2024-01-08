@@ -1,55 +1,55 @@
-resources:
-  - name: exclude
-    type: GitRepo
-    configuration:
-      gitProvider: vijay
-      path: vijayreddy1991/run       
-      files:
-        exclude: test.yaml
+# resources:
+#   - name: exclude
+#     type: GitRepo
+#     configuration:
+#       gitProvider: vijay
+#       path: vijayreddy1991/run       
+#       files:
+#         exclude: test.yaml
         
-  - name: include
-    type: GitRepo
-    configuration:
-      gitProvider: vijay
-      path: vijayreddy1991/run       
-      files:
-        include: test.yaml
-pipelines:
-  - name: test_gcp_nodepool
-    configuration:  
-      runtime:
-        type: host
-    steps:
-      - name: host_machine_step
-        type: Bash
-        configuration:  
-          runtime:
-            type: host
-          inputResources:
-            - name: exclude
-        execution:
-          onExecute: 
-             - echo "testing"
-             - uname -m 
-             # - docker --version
-             # - node --version
-             # - npm --version
-             # - npm list -g kind-of
-             # - npm list -g json5
-             # - npm list -g elliptic
-      - name: Docker_step
-        type: Bash
-        configuration:
-          # nodePool: win_2019
-          runtime:
-            type: image
-          inputResources:
-            - name: include
-          inputSteps:
-            - name: host_machine_step
-        execution:
-          onExecute: 
-             - echo "testing"
-             - docker images
-#              - cat logs.txt
-#              - cat startlogs.txt             
+#   - name: include
+#     type: GitRepo
+#     configuration:
+#       gitProvider: vijay
+#       path: vijayreddy1991/run       
+#       files:
+#         include: test.yaml
+# pipelines:
+#   - name: test_gcp_nodepool
+#     configuration:  
+#       runtime:
+#         type: host
+#     steps:
+#       - name: host_machine_step
+#         type: Bash
+#         configuration:  
+#           runtime:
+#             type: host
+#           inputResources:
+#             - name: exclude
+#         execution:
+#           onExecute: 
+#              - echo "testing"
+#              - uname -m 
+#              # - docker --version
+#              # - node --version
+#              # - npm --version
+#              # - npm list -g kind-of
+#              # - npm list -g json5
+#              # - npm list -g elliptic
+#       - name: Docker_step
+#         type: Bash
+#         configuration:
+#           # nodePool: win_2019
+#           runtime:
+#             type: image
+#           inputResources:
+#             - name: include
+#           inputSteps:
+#             - name: host_machine_step
+#         execution:
+#           onExecute: 
+#              - echo "testing"
+#              - docker images
+# #              - cat logs.txt
+# #              - cat startlogs.txt             
