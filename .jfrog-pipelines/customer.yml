@@ -2,8 +2,8 @@ resources:
   - name: jfrog_playground
     type: GitRepo
     configuration:
-      gitProvider: aiOla_GitHub_Enterprise
-      path: aiola-lab/jfrog-playground
+      gitProvider: vijay
+      path: vijayreddy1991/run
       branches:
         include: development
       buildOn:
