@@ -1,35 +1,35 @@
-resources:
-  - name: test_12345
-    type: GitRepo
-    configuration:
-      gitProvider: vijay
-      path: vijayreddy1991/run
-  - name: propertyBag_vijay
-    type: PropertyBag
-    configuration:
-      property1: "jfrog"
-      property2: "pipelines"      
+# resources:
+#   - name: test_12345
+#     type: GitRepo
+#     configuration:
+#       gitProvider: vijay
+#       path: vijayreddy1991/run
+#   - name: propertyBag_vijay
+#     type: PropertyBag
+#     configuration:
+#       property1: "jfrog"
+#       property2: "pipelines"      
 
-pipelines:
-  - name: event_service_e2e
-    configuration:
-      environmentVariables:
-        readOnly:
-          RUN_LOCAL_TEST_SUIT:
-            default: 'false'
-            values:
-              - 'true'
-              - 'false'
+# pipelines:
+#   - name: event_service_e2e
+#     configuration:
+#       environmentVariables:
+#         readOnly:
+#           RUN_LOCAL_TEST_SUIT:
+#             default: 'false'
+#             values:
+#               - 'true'
+#               - 'false'
 
-    steps:
-      - name: event_local_e2e
-        type: Bash
-        configuration:
-          condition: '${RUN_LOCAL_TEST_SUIT} == "true"'
-          inputResources:
-            - name: test_12345
-          outputResources:
-            - name: propertyBag_vijay
-        execution:
-          onExecute:
-            - write_output propertyBag_vijay "vijay=$run_number" 
+#     steps:
+#       - name: event_local_e2e
+#         type: Bash
+#         configuration:
+#           condition: '${RUN_LOCAL_TEST_SUIT} == "true"'
+#           inputResources:
+#             - name: test_12345
+#           outputResources:
+#             - name: propertyBag_vijay
+#         execution:
+#           onExecute:
+#             - write_output propertyBag_vijay "vijay=$run_number" 
