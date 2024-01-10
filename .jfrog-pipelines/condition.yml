@@ -1,81 +1,81 @@
 
-pipelines:
-  - name: vijay_world
-    steps:
-      - name: first
-        type: Bash
-        execution:
-          onExecute:
-            - echo "hello"
-      - name: second
-        type: Bash
-        configuration:
-          inputSteps:
-            - name: first
-        execution:
-          onExecute:
-            - echo "Hello World"
-      - name: third
-        type: Bash
-        configuration:
-          inputSteps:
-            - name: second
-        execution:
-          onExecute:
-            - echo "hello"
-      - name: four
-        type: Bash
-        configuration:
-          inputSteps:
-            - name: third
-        execution:
-          onExecute:
-            - echo "Hello World"
-      - name: five
-        type: Bash
-        configuration:
-          inputSteps:
-            - name: four
-        execution:
-          onExecute:
-            - echo "hello"
-      - name: six
-        type: Bash
-        configuration:
-          inputSteps:
-            - name: five
-        execution:
-          onExecute:
-            - echo "Hello World"
-      - name: seven
-        type: Bash
-        configuration:
-          inputSteps:
-            - name: six
-        execution:
-          onExecute:
-            - echo "hello"
-      - name: eight
-        type: Bash
-        configuration:
-          inputSteps:
-            - name: seven
-        execution:
-          onExecute:
-            - echo "Hello World"
-      - name: nine
-        type: Bash
-        configuration:
-          inputSteps:
-            - name: eight
-        execution:
-          onExecute:
-            - echo "hello"
-      - name: ten
-        type: Bash
-        configuration:
-          inputSteps:
-            - name: nine
-        execution:
-          onExecute:
-            - echo "Hello World"
+# pipelines:
+#   - name: vijay_world
+#     steps:
+#       - name: first
+#         type: Bash
+#         execution:
+#           onExecute:
+#             - echo "hello"
+#       - name: second
+#         type: Bash
+#         configuration:
+#           inputSteps:
+#             - name: first
+#         execution:
+#           onExecute:
+#             - echo "Hello World"
+#       - name: third
+#         type: Bash
+#         configuration:
+#           inputSteps:
+#             - name: second
+#         execution:
+#           onExecute:
+#             - echo "hello"
+#       - name: four
+#         type: Bash
+#         configuration:
+#           inputSteps:
+#             - name: third
+#         execution:
+#           onExecute:
+#             - echo "Hello World"
+#       - name: five
+#         type: Bash
+#         configuration:
+#           inputSteps:
+#             - name: four
+#         execution:
+#           onExecute:
+#             - echo "hello"
+#       - name: six
+#         type: Bash
+#         configuration:
+#           inputSteps:
+#             - name: five
+#         execution:
+#           onExecute:
+#             - echo "Hello World"
+#       - name: seven
+#         type: Bash
+#         configuration:
+#           inputSteps:
+#             - name: six
+#         execution:
+#           onExecute:
+#             - echo "hello"
+#       - name: eight
+#         type: Bash
+#         configuration:
+#           inputSteps:
+#             - name: seven
+#         execution:
+#           onExecute:
+#             - echo "Hello World"
+#       - name: nine
+#         type: Bash
+#         configuration:
+#           inputSteps:
+#             - name: eight
+#         execution:
+#           onExecute:
+#             - echo "hello"
+#       - name: ten
+#         type: Bash
+#         configuration:
+#           inputSteps:
+#             - name: nine
+#         execution:
+#           onExecute:
+#             - echo "Hello World"
