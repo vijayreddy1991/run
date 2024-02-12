@@ -10,8 +10,6 @@ resources:
 pipelines:
   - name: test_gcp_nodepool
     configuration:  
-      runtime:
-        type: host
     steps:
       - name: host_machine_step
         type: Bash
@@ -23,134 +21,134 @@ pipelines:
         execution:
           onExecute: 
              - echo "testing"
-             - uname -m 
-             # - docker --version
-             # - node --version
-             # - npm --version
-             # - npm list -g kind-of
-             # - npm list -g json5
-             # - npm list -g elliptic
-      - name: Docker_step
-        type: Bash
-        configuration:
-          # nodePool: win_2019
-          runtime:
-            type: image
-          inputSteps:
-            - name: host_machine_step
-        execution:
-          onExecute: 
-             - echo "testing"
-             - docker images
-#              - cat logs.txt
-#              - cat startlogs.txt 
+             - sleep 60
+#              # - docker --version
+#              # - node --version
+#              # - npm --version
+#              # - npm list -g kind-of
+#              # - npm list -g json5
+#              # - npm list -g elliptic
+#       - name: Docker_step
+#         type: Bash
+#         configuration:
+#           # nodePool: win_2019
+#           runtime:
+#             type: image
+#           inputSteps:
+#             - name: host_machine_step
+#         execution:
+#           onExecute: 
+#              - echo "testing"
+#              - docker images
+# #              - cat logs.txt
+# #              - cat startlogs.txt 
 
-      - name: step_3
-        type: Bash
-        configuration:
-          # nodePool: win_2019
-          runtime:
-            type: image
-          inputSteps:
-            - name: Docker_step
-        execution:
-          onExecute: 
-             - echo "testing"
-             - docker images
+#       - name: step_3
+#         type: Bash
+#         configuration:
+#           # nodePool: win_2019
+#           runtime:
+#             type: image
+#           inputSteps:
+#             - name: Docker_step
+#         execution:
+#           onExecute: 
+#              - echo "testing"
+#              - docker images
 
-      - name: step_4
-        type: Bash
-        configuration:
-          # nodePool: win_2019
-          runtime:
-            type: image
-          inputSteps:
-            - name: step_3
-        execution:
-          onExecute: 
-             - echo "testing"
-             - docker images
-      - name: step_5
-        type: Bash
-        configuration:
-          # nodePool: win_2019
-          runtime:
-            type: image
-          inputSteps:
-            - name: step_4
-        execution:
-          onExecute: 
-             - echo "testing"
-             - docker images
-      - name: step_6
-        type: Bash
-        configuration:
-          # nodePool: win_2019
-          runtime:
-            type: image
-          inputSteps:
-            - name: step_5
-        execution:
-          onExecute: 
-             - echo "testing"
-             - docker images
-      - name: step_7
-        type: Bash
-        configuration:
-          # nodePool: win_2019
-          runtime:
-            type: image
-          inputSteps:
-            - name: step_6
-        execution:
-          onExecute: 
-             - echo "testing"
-             - docker images
-      - name: step_8
-        type: Bash
-        configuration:
-          # nodePool: win_2019
-          runtime:
-            type: image
-          inputSteps:
-            - name: step_7
-        execution:
-          onExecute: 
-             - echo "testing"
-             - docker images
-      - name: step_9
-        type: Bash
-        configuration:
-          # nodePool: win_2019
-          runtime:
-            type: image
-          inputSteps:
-            - name: step_8
-        execution:
-          onExecute: 
-             - echo "testing"
-             - docker images
-      - name: step_10
-        type: Bash
-        configuration:
-          # nodePool: win_2019
-          runtime:
-            type: image
-          inputSteps:
-            - name: step_9
-        execution:
-          onExecute: 
-             - echo "testing"
-             - docker images
-      - name: step_11
-        type: Bash
-        configuration:
-          # nodePool: win_2019
-          runtime:
-            type: image
-          inputSteps:
-            - name: step_10
-        execution:
-          onExecute: 
-             - echo "testing"
-             - docker images             
+#       - name: step_4
+#         type: Bash
+#         configuration:
+#           # nodePool: win_2019
+#           runtime:
+#             type: image
+#           inputSteps:
+#             - name: step_3
+#         execution:
+#           onExecute: 
+#              - echo "testing"
+#              - docker images
+#       - name: step_5
+#         type: Bash
+#         configuration:
+#           # nodePool: win_2019
+#           runtime:
+#             type: image
+#           inputSteps:
+#             - name: step_4
+#         execution:
+#           onExecute: 
+#              - echo "testing"
+#              - docker images
+#       - name: step_6
+#         type: Bash
+#         configuration:
+#           # nodePool: win_2019
+#           runtime:
+#             type: image
+#           inputSteps:
+#             - name: step_5
+#         execution:
+#           onExecute: 
+#              - echo "testing"
+#              - docker images
+#       - name: step_7
+#         type: Bash
+#         configuration:
+#           # nodePool: win_2019
+#           runtime:
+#             type: image
+#           inputSteps:
+#             - name: step_6
+#         execution:
+#           onExecute: 
+#              - echo "testing"
+#              - docker images
+#       - name: step_8
+#         type: Bash
+#         configuration:
+#           # nodePool: win_2019
+#           runtime:
+#             type: image
+#           inputSteps:
+#             - name: step_7
+#         execution:
+#           onExecute: 
+#              - echo "testing"
+#              - docker images
+#       - name: step_9
+#         type: Bash
+#         configuration:
+#           # nodePool: win_2019
+#           runtime:
+#             type: image
+#           inputSteps:
+#             - name: step_8
+#         execution:
+#           onExecute: 
+#              - echo "testing"
+#              - docker images
+#       - name: step_10
+#         type: Bash
+#         configuration:
+#           # nodePool: win_2019
+#           runtime:
+#             type: image
+#           inputSteps:
+#             - name: step_9
+#         execution:
+#           onExecute: 
+#              - echo "testing"
+#              - docker images
+#       - name: step_11
+#         type: Bash
+#         configuration:
+#           # nodePool: win_2019
+#           runtime:
+#             type: image
+#           inputSteps:
+#             - name: step_10
+#         execution:
+#           onExecute: 
+#              - echo "testing"
+#              - docker images             
