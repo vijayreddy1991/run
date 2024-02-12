@@ -9,7 +9,6 @@ resources:
         
 pipelines:
   - name: test_gcp_nodepool
-    configuration:  
     steps:
       - name: host_machine_step
         type: Bash
