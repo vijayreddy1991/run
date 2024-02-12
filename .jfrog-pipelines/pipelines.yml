@@ -19,7 +19,7 @@ pipelines:
               auto:
                 language: go
                 versions:
-                  - "1.17"        
+                  - "1.19"        
           inputResources:
             - name: exclude
         execution:
