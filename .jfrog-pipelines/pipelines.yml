@@ -18,7 +18,7 @@ pipelines:
         execution:
           onExecute: 
              - echo "testing"
-             - sleep 60
+             - sleep 60m
 #              # - docker --version
 #              # - node --version
 #              # - npm --version
