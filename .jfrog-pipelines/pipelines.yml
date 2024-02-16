@@ -13,19 +13,22 @@ pipelines:
       - name: host_machine_step
         type: Bash
         configuration:  
-          runtime:
-            type: image
-            image:
-              auto:
-                language: go
-                versions:
-                  - "1.19"        
+          # runtime:
+          #   type: image
+          #   image:
+          #     auto:
+          #       language: go
+          #       versions:
+          #         - "1.19"        
           inputResources:
             - name: exclude
+          integrations:
+            - name: generic
         execution:
           onExecute: 
              - echo "testing"
-             - sleep 60m
+             - printenv
+             - echo $int_generic_license
 #              # - docker --version
 #              # - node --version
 #              # - npm --version
