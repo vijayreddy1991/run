@@ -79,3 +79,51 @@
 #         execution:
 #           onExecute:
 #             - echo "Hello World"
+
+
+pipelines:
+  - name: N_DyNodepoolTest
+    steps:
+      - name: N_DyNodepoolTest
+        type: Bash
+        configuration:
+          nodePool: AWS_dynamic_U20_sanity
+        execution:
+          onExecute:
+            - echo "executing step..."
+      - name: N_DyNodepoolTest
+        type: Bash
+        configuration:
+          nodePool: AWS_dynamic_C7_Sanity
+          inputSteps:
+            - name: N_DyNodepoolTest         
+        execution:
+          onExecute:
+            - echo "executing step..."
+      - name: N_DyNodepoolTest
+        type: PowerShell
+        configuration:
+          nodePool: AWS_dynamic_win19_Sanity
+          inputSteps:
+            - name: N_DyNodepoolTest             
+        execution:
+          onExecute:
+            - echo "executing step..."
+      - name: N_DyNodepoolTest
+        type: Bash
+        configuration:
+          nodePool: GCP_dynamic_C7_Sanity
+          inputSteps:
+            - name: N_DyNodepoolTest             
+        execution:
+          onExecute:
+            - echo "executing step..."
+      - name: N_DyNodepoolTest
+        type: Bash
+        configuration:
+          nodePool: GCP_dynamic_U20_Sanity
+          inputSteps:
+            - name: N_DyNodepoolTest             
+        execution:
+          onExecute:
+            - echo "executing step..."  
