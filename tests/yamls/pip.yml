@@ -2,7 +2,7 @@ resources:
   - name: repo
     type: GitRepo
     configuration:
-      gitProvider: vijay_gitHub
+      gitProvider: vijay
       path: vijayreddy1991/run
 
 pipelines:
