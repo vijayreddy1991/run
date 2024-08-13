@@ -1,8 +1,0 @@
-pipelines:
-  - name: P_WF_0012
-    steps:
-      - name: P_WF_0012
-        type: Bash
-        execution:
-          onExecute:
-            - echo "test"
